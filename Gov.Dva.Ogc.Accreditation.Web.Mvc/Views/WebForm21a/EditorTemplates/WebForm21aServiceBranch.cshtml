@@ -1,0 +1,93 @@
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21aServiceBranch
+
+@{
+    Layout = null;
+}
+    ss
+
+        <div class="row"> 
+            <div class="col-md-2">
+                <div>
+                    Army
+                </div>
+                <div>
+                    @Html.EditorFor(model => model.IsArmy)                
+                    @Html.ValidationMessageFor(model => model.IsArmy)
+                </div>
+            </div>
+    
+            <div class="col-md-2">
+                <div>
+                    Navy
+                </div>
+                <div>
+                @Html.EditorFor(model => model.IsNavy)
+                @Html.ValidationMessageFor(model => model.IsNavy)
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div>
+                    Air Force
+                </div>
+                <div>
+                    @Html.EditorFor(model => model.IsAirForce)                
+                    @Html.ValidationMessageFor(model => model.IsAirForce)
+                </div>
+            </div>
+    
+            <div class="col-md-2">
+                <div>
+                    Marines
+                </div>
+                <div>
+                    @Html.EditorFor(model => model.IsMarines)                
+                    @Html.ValidationMessageFor(model => model.IsMarines)
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div>
+                    Coast Guard
+                </div>
+                <div>
+                    @Html.EditorFor(model => model.IsCoastGuard)                
+                    @Html.ValidationMessageFor(model => model.IsCoastGuard)
+                </div>
+            </div>
+    
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-2">
+                <div>
+                    Non-Veteran
+                </div>
+                <div>
+                    @Html.EditorFor(model => model.IsNonVeteran)                
+                    @Html.ValidationMessageFor(model => model.IsNonVeteran)
+                </div>
+            </div>
+    
+            <div class="col-md-2">
+                <div>
+                    Other
+                </div>
+                <div>
+                    @Html.EditorFor(model => model.IsOther)                
+                    @Html.ValidationMessageFor(model => model.IsOther)
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div>
+                    Other Service
+                </div>
+                <div>
+                    @Html.TextBoxFor(model => model.OtherService, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.OtherService)
+                </div>
+
+            </div>
+        </div>
+

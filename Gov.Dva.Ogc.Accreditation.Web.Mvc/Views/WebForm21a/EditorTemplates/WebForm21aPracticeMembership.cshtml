@@ -1,0 +1,25 @@
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21aPracticeMembership
+
+@{
+    Layout = null;
+}
+ 
+	  		<tr>
+	  			<td>
+                @Html.TextBoxFor(model => model.Agency, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Agency)
+	  			</td>
+	  			<td>
+                @Html.TextBoxFor(model => model.AdmissionDate, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AdmissionDate)
+
+	  			</td>
+	  			<td>
+                @Html.TextBoxFor(model => model.MembershipNo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MembershipNo)
+
+	  			</td>
+	  		</tr>
+   
+    
+    

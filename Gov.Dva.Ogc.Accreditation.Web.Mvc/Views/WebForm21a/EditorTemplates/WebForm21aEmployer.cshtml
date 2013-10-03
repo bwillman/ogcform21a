@@ -1,0 +1,58 @@
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21aEmployer
+
+@{
+    Layout = null;
+}
+
+	  	<div class="collection_box">
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<h4>Employer #x</h4>	
+	  			</div>
+	  		</div>
+	  		<div class="row">
+		  		<div class="col-md-4">
+		  			<label>Name</label>
+	  				@Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Name)
+		  			<label>Address</label>
+	  				@Html.TextAreaFor(model => model.Address, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Address)
+	  						  			
+	
+		  		</div>
+		  		<div class="col-md-4">	
+					<label>Phone No. (with area code)</label>		
+                    @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PhoneNo)
+
+					<label>Position Title</label>		
+                    @Html.TextBoxFor(model => model.PositionTitle, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PositionTitle)
+		  		</div>		 
+		  		<div class="col-md-4">
+					<label>Employment Dates</label><br>
+					<div style="width: 50px; display: inline-block">From: </div>
+					
+                    @Html.TextBoxFor(model => model.DateRangeEmpBegin, new { @class = "form-control", @style = "display: inline-block; width: 100px" })
+                    @Html.ValidationMessageFor(model => model.DateRangeEmpBegin)<p></p>
+					<div style="width: 50px; display: inline-block">To: </div> 		  			
+                    @Html.TextBoxFor(model => model.DateRangeEmpEnd, new { @class = "form-control", @style = "display: inline-block; width: 100px"  })
+                    @Html.ValidationMessageFor(model => model.DateRangeEmpEnd)	
+		  			
+		  		</div>			  		
+	  			
+	  		</div>
+	  		<div class="row">
+	  			<div class="col-md-6">
+					<label>Name of Supervisor</label>	  			
+                    @Html.TextBoxFor(model => model.Supervisor, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Supervisor)
+	  				
+	  			</div>
+			
+	  		</div>
+	  			
+	  	</div>
+    
+  

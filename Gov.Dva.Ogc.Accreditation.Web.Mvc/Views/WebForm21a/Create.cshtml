@@ -1,0 +1,895 @@
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21a
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+
+  	
+<div id="progress">
+  	<ul  class="pull-left">
+  		<li><a href="javascript: navigation_click(1)"><div class="circle" id="step_1">1</div></a>Start</li>
+  		<li><a href="javascript: navigation_click(2)"><div class="circle" id="step_2">2</div></a>My Info</li>
+  		<li><a href="javascript: navigation_click(3)"><div class="circle" id="step_3">3</div></a>Employment</li>
+  		<li><a href="javascript: navigation_click(4)"><div class="circle" id="step_4">4</div></a>Education</li>
+  		<li><a href="javascript: navigation_click(5)"><div class="circle" id="step_5">5</div></a>Legal</li>
+  		<li><a href="javascript: navigation_click(6)"><div class="circle" id="step_6">6</div></a>Background</li>
+  				
+  	</ul>
+</div>
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    	<div class="field_section" id="section_1">
+		  	<div class="instructions">
+		  		INSTRUCTIONS: Please provide the applicable personal and employment data, then read each question and provide complete answers to all questions that apply to you. If additional space is needed, please attach a supplementary page(s). After providing all of the requested information, sign and date your application. Unsigned or uncomplete applications will not be processed. Send completed applications to: Department of Veteran Affairs, Office of the General Counsel (022D), 810 Vermont Avenue, NW, Washington, D.C. 20420. After an affirmative determination of character and fitness for practice before the VA, claims agent applicants must achieve a score of 75 percent or more on a written examination administered VA as a prerequisite to acreditation. Claims agent applications will be given written instructions for arranging to take the examination if initial eligibility is established. Attorney applicants must be in good standing with a State bar and are not required to take an examination administered by VA as a prerequisite to accreditation. Denials of initial elibibility for accreditation as a claims agent or attorney are final and are not subject to appeal, but applicants may reapply. 
+		  	</div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                        <input type="button" class="next_button" value="Next" onclick="navigation_click(2)" />
+                </div>
+            </div>
+
+        </div>
+    
+        <div class="field_section" id="section_2">
+	  	<h3>
+	  		My Information
+	  	</h3>
+
+            <div class="form_grouping">
+
+
+			    <div class="row">
+			  	    <div class="col-md-4 form-group">
+                        <label>First Name</label>	
+		
+                        @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.FirstName)
+				
+			  	    </div>
+			  	    <div class="col-md-4 form-group">
+					    <label>Middle Name</label>
+		
+                        @Html.TextBoxFor(model => model.MiddleName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MiddleName)		  		
+			  	    </div>	
+			  	    <div class="col-md-4 form-group">
+                        <label>Last Name</label>
+
+                        @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.LastName)			  		
+			  	    </div>	
+			    </div>
+
+			    <div class="row">
+				    <div class="col-md-6">
+					    <div class="form-group">
+                            <label>Home Address</label>
+                            @Html.TextBoxFor(model => model.HomeAddress1, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.HomeAddress1)
+					    </div>		
+					    <div class="form-group">
+						    <label class="sr-only">Home Address 2</label>
+                            @Html.TextBoxFor(model => model.HomeAddress2, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.HomeAddress2)
+					    </div>		
+					    <div class="row">
+						    <div class="form-group col-md-6">
+							    <label>State</label>
+                                @Html.TextBoxFor(model => model.HomeState, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.HomeState)
+						    </div>		
+						    <div class="form-group  col-md-6">
+							    <label>Zip</label>
+                                @Html.TextBoxFor(model => model.HomeZip, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.HomeZip)
+						    </div>		
+						
+					    </div>
+				    </div>
+				    <div class="col-md-6">
+					    <div class="form-group">
+						    <label>Phone Number</label><span class="question_small_text"> (including area code)</span>
+                            @Html.TextBoxFor(model => model.HomePhoneNo, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.HomePhoneNo)
+
+					
+					    </div>						
+					
+					    <div class="form-group">
+						    <label>Email Address (if available)</label>
+                            @Html.TextBoxFor(model => model.HomeEmailAddr, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.HomeEmailAddr)
+					    </div>						
+				    </div>
+				
+			    </div>
+
+
+			    <div class="row">
+				    <div class="col-md-4 form-group">
+					    <label>Date of Birth (month, day, year)</label>
+                        @Html.TextBoxFor(model => model.BirthDate, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.BirthDate)
+				    </div>		
+												
+				    <div class="col-md-8 form-group">
+					    <label>Place of Birth(City, State, County)</label>
+					    @Html.TextBoxFor(model => model.BirthLocation, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.BirthLocation)
+				    </div>					
+			    </div>
+            </div>    
+			
+            <div class="form_grouping">
+                <div class="row">
+                    <div class="col-md-5">
+                        <label><span class="question_number">3A.</span> Employment Status</label>
+                        <div id="employment_status">
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus0" value="0" />EMPLOYED   <span class="question_small_text">(complete item 3B)</span>
+                            </div>
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus1" value="1" />UNEMPLOYED   <span class="question_small_text">(skip item 3B)</span>
+                            </div>
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus2" value="2" />SELF-EMPLOYED   <span class="question_small_text">(skip item 3B)</span>
+                            </div>
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus3" value="3" />STUDENT   <span class="question_small_text">(skip item 3B)</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-7">
+                        <label><span class="question_number">3B.</span> Work Address</label> 
+					    <div class="form-group">
+                            @Html.TextBoxFor(model => model.WorkAddress1, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.WorkAddress1)
+					    </div>		
+					    <div class="form-group">
+
+                            @Html.TextBoxFor(model => model.WorkAddress2, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.WorkAddress2)
+					    </div>		
+					    <div class="row">
+						    <div class="form-group col-md-6">
+							    <label>State</label>
+                                @Html.TextBoxFor(model => model.WorkState, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.WorkState)
+						    </div>		
+						    <div class="form-group  col-md-6">
+							    <label>Zip</label>
+                                @Html.TextBoxFor(model => model.WorkZip, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.WorkZip)
+						    </div>		
+						
+					    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form_grouping">
+			    <div class="row">
+				    <div class="col-md-4 form-group">
+					    <label>List Dates of all active military service</label>
+                        @Html.EditorFor(model => model.WebForm21aServiceDate)
+									
+				    </div>	
+                    <div class="col-md-8 form-group">
+                        <label>Branch of Service</label>
+                        @Html.EditorFor(model => model.WebForm21aServiceBranch)
+                    
+                        @Html.ValidationMessageFor(model => model.WebForm21aServiceBranch)
+
+                    </div>
+			    </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                        <input type="button" class="next_button" value="Previous" onclick="navigation_click(2)" />
+
+                        <input type="button" class="next_button" value="Next" onclick="navigation_click(3)" />
+                </div>
+            </div>
+
+	  	</div>
+	  	
+	  	<!-- Employment -->
+    
+
+	  	<div class="field_section" id="section_3" style="display:none">
+	  		<h3>Employment</h3>
+            @Html.EditorFor(model => model.WebForm21aEmployer)
+            <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                        <input type="button" class="next_button" value="Previous" onclick="navigation_click(3)" />
+
+                        <input type="button" class="next_button" value="Next" onclick="navigation_click(4)" />
+                </div>
+            </div>
+
+	  	</div>
+
+    
+	  	<!-- Education -->
+	  	<div class="field_section" id="section_4">
+
+	  		<h3>Education</h3>
+            @Html.EditorFor(model => model.WebForm21aEducation)
+            <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                        <input type="button" class="next_button" value="Previous" onclick="navigation_click(4)" />
+
+                        <input type="button" class="next_button" value="Next" onclick="navigation_click(5)" />
+                </div>
+            </div>
+              
+	  	</div>
+
+    	  	
+	  	<!-- Legal -->
+	  	<div class="field_section" id="section_5">
+	  		<h3>Legal</h3>
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">11A.</span> Are you currently a member in good standing of the bar of the highest court of a state or territory of the United States?</div>
+	  				<div style="display:inline-block; padding-top: 10px; margin-left: 20px">
+                    
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.IsBarMember, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.IsBarMember, false, new {@checked = "checked" })                          
+	  				</div>
+	  				
+	  			</div>
+	  		</div>
+	  		<div class="row sub_question" id="jurisdiction_section" style="display: none">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<div class="question_number">11B.</div> If "Yes", list each jurisdiction in which admitted, the date of adminssion, and membership or registration number.
+	  				</div>
+	  				<table class="collection_table">
+	  					<tr>
+	  						<th style="width: 350px;">
+					  			Jurisdiction in which admitted			
+	  						</th>
+							<th>
+								Date of Admission
+							</th>
+							<th>
+								Membership or Registration No.
+							</th>
+	  						
+	  					</tr>
+                          @Html.EditorFor(model => Model.WebForm21aBarMembership)
+	  				</table>
+	  				
+	  			</div> 
+	  		</div>
+
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">12A.</span> Are you currently admitted to practice before any state or federal agency or any federal court?</div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.IsPracticing, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.IsPracticing, false, new {@checked = "checked" }) 
+	  				
+	  			</div>
+	  		</div>
+	  		<div class="row sub_question" id="practice_section" style="display: none">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<div class="question_number">12B.</div> If "Yes", list each agency or federal court to which admitted, the date of admission, and membership or registration number.
+	  				</div>
+	  				<table class="collection_table">
+	  					<tr>
+	  						<th style="width: 350px;">
+					  			Agency in which admitted		
+	  						</th>
+							<th>
+								Date of admission
+							</th>
+							<th>
+								Membership or Registration No.
+							</th>
+	  						
+	  					</tr>
+
+                        @Html.EditorFor(model => Model.WebForm21aPracticeMembership)
+	  				</table>
+	  				
+	  			</div> 
+	  		</div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                        <input type="button" class="next_button" value="Previous" onclick="navigation_click(5)" />
+
+                        <input type="button" class="next_button" value="Next" onclick="navigation_click(6)" />
+                </div>
+            </div>
+
+	  		
+
+	  	</div>
+	  	
+		<!-- Background -->
+		<div class="field_section" id="section_6">
+			<h3>Background</h3>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="instructions">
+						<p>Truthfulness and candor are essential elements of a good moral character and reputation relevant to practice before the Department of Veteran Affairs. It is in your best interest, therefore, to provide the Office of the General Counsel with all available information in responding to the questions asked below. <span style="font-style: italic">For each question answered "YES", provide a detailed statement setting forth all relevant facts and dates with copies of relevant documentation.</span></p>
+						
+						<p>Your responses must be updated as necessary prior to your accreditation. Failure to disclose the requested information may result in denial of accreditation under 38 C.F.R. 14.629 or in disciplinary proceedings under 38 C.F.R. 14.633 if you are already accredited.</p>
+						<p>For questions 13 through 15 your answers should include convictions resulting from a plea of nolo contendere <span style="font-style: italic">(no contest)</span>, but omit (1) traffic fines of $300 or less, (2) any violation of law comitted before your 16th birthday, and (3) any conviction for which the record was expunged under Federal or state law.</p>
+					</div>
+				</div>
+			</div>
+            <!-- Was Convicted --> 
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">13A.</span> Have you ever been convicted, imprisoned, sentenced to probation or parole? <span class="question_small_text">(Include felonies, firearms or explosives violations, misdemeanors, and all other ofenses)</span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.WasConvicted, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.WasConvicted, false) 
+	  				
+	  			</div>
+	  		</div>
+	  		<div class="row sub_question" id="was_convicted_section" style="display: none">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<div class="question_number">13B.</div> If "Yes", provide the date, explanation of the violation, place of occurence, and the name and address of the military authority or court involved.
+	  				</div>
+                    <div>
+                        @Html.TextAreaFor(Model => Model.ExplainConviction, new { @class = "form-control"})
+                    </div>	  				
+	  			</div> 
+	  		</div>
+            <!-- Was Convicted Military  -->
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">14A.</span>Have you ever been convicted by a military court-martial<span class="question_small_text">(If no military service, answer "No")</span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.WasConvictedMilitary, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.WasConvictedMilitary, false) 
+	  				
+	  			</div>
+	  		</div>
+	  		<div class="row sub_question" id="was_convicted_military_explanation" style="display: none">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<div class="question_number">14B.</div> If "Yes", provide the date, explanation of the violation, place of occurence, and the name and address of the military authority or court involved.
+	  				</div>
+                    <div>
+                        @Html.TextAreaFor(Model => Model.ExplainMilitaryConviction, new { @class = "form-control"})
+                    </div>	  				
+	  			</div> 
+	  		</div>
+            <!-- Is Charged -->
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">15A.</span>Are you now under charges for any violation of the law?<span class="question_small_text"></span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.IsCharged, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.IsCharged, false) 
+	  				
+	  			</div>
+	  		</div>
+	  		<div class="row sub_question" id="is_charged_explanation" style="display: none">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<div class="question_number">15B.</div> If "Yes", provide the date, explanation of the violation, place of occurence, and the name and address of the military authority or court involved.
+	  				</div>
+                    <div>
+                        @Html.TextAreaFor(Model => Model.ExplainCharges, new { @class = "form-control"})
+                    </div>	  				
+	  			</div> 
+	  		</div>
+            <!-- Was Expelled -->
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">16.</span>Have you ever been suspended, expelled or asked to resign or withdraw from any educational institution, or have you resigned or withdrawn from any such institution to avoid discipline, suspension, or expulsion for conduct involving dishonesty, fraud, misrepresentation, or deceit?<span class="question_small_text"></span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.WasExpelled, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.WasExpelled, false) 
+	  				
+	  			</div>
+	  		</div>
+            <!-- Was Disciplined -->
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">17.</span>Have you ever been disciplined, reprimanded, suspended or terminated in any job for conduct involving dishonesty, fraud, misrepresentation, deceit, or any violation of federal or state laws or regulations?<span class="question_small_text"></span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.WasDisciplined, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.WasDisciplined, false) 
+	  				
+	  			</div>
+	  		</div>
+            <!-- Was Terminated -->
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">18.</span>Have you ever resigned, retired from, or quit a job when you were under investigation or inquiry for conduct which could have been considered as involving dishonesty, fraud, misrepresentation, deceit, or violation of federal or state laws or regulations, or after receiving notice or being advised of possible investigation, inquiry, or disciplinary action for such conduct?<span class="question_small_text"></span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.WasTerminated, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.WasTerminated, false) 
+	  				
+	  			</div>
+	  		</div>
+            <!-- HasRepresentedGovt -->
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">19.</span>Have you ever functioned as a representative, agent, or attorney before a state or federal department or agency?<span class="question_small_text"></span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.HasRepresentedGovt, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.HasRepresentedGovt, false) 
+	  				
+	  			</div>
+	  		</div>
+            <!-- WasBarred -->
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">20.</span>Have you ever been reprimanded, suspended, or barred from practice before any court, bar, or federal or state agency, or have you resigned membership in the bar of any court, or federal or state agency to avoid reprimand, suspension, or disbarment for conduct involving dishonesty, fraud, misrepresentation, or deceit?<span class="question_small_text"></span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.WasBarred, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.WasBarred, false) 
+	  				
+	  			</div>
+	  		</div>
+            <!-- HasAppliedForAccred -->
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">21.</span>Have you ever applied for accreditation by the Department of Veteran Affairs as a  representative of a veterans service organization, agent, or attorney?<span class="question_small_text"></span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.HaveAppliedForAccred, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.HaveAppliedForAccred, false) 
+	  				
+	  			</div>
+	  		</div>
+            <!-- WasAccredTerminated -->
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">22.</span>If you were previously accredited as a representative of a Veteran Service Organization, was that accreditation terminated or suspended at the request of the organization?<span class="question_small_text"></span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.WasAccredTerminated, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.WasAccredTerminated, false) 
+	  				
+	  			</div>
+	  		</div>
+            <!-- IsImpaired -->
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">23A.</span>Do you have any condition or impairment (such as substance abuse, alcohol abuse, or a mental, emotional, nervous, or behavioral disorder or condition) that in any way currently affects, or if untreated or not otherwise actively managed, could affect your ability to represent claimants in a competent and professional manner?<span class="question_small_text"></span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.IsImpaired, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.IsImpaired, false) 
+	  				
+	  			</div>
+	  		</div>
+	  		<div class="row sub_question" id="is_impaired_explanation" style="display: none">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<div class="question_number">23B.</div>If you answered "Yes" to item 23A, please describe the condition or impairment, and any treatment you received in the past year or receive now. If you have been under the care or supervision of a healthcare professional, submit a statement by the healthcare professional specifying your current diagnosis, treatment regimen, and prognosis, and its bearing on your fitness to represent claimants before the Department of Veteran Affairs.
+	  				</div>
+                    <div>
+                        @Html.TextAreaFor(Model => Model.ExplainImpairment, new { @class = "form-control"})
+                    </div>	  				
+	  			</div> 
+	  		</div>
+
+            <!-- IsPhysicallyLimited-->
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">24A.</span>Do you have any physical limitations which would interfere with your completion of a written examination administered under the supervision of a VA regional counsel?<span class="question_small_text">(Claims agent applicants only)</span></div>
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.IsPhysicallyLimited, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.IsPhysicallyLimited, false) 
+	  				
+	  			</div>
+	  		</div>
+	  		<div class="row sub_question" id="is_physically_limited_explanation" style="display: none">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<div class="question_number">24B.</div>If "Yes", please state the nature of such limitations and provide details of any special accomodations deemed necessary.
+	  				</div>
+                    <div>
+                        @Html.TextAreaFor(Model => Model.ExplainLimitation, new { @class = "form-control"})
+                    </div>	  				
+	  			</div> 
+	  		</div>
+
+
+
+
+
+
+
+
+
+		</div><!-- end of background section -->
+
+}
+
+    <!-- beginning scaffolding code -->
+    
+    <!-- 
+        @*
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MiddleName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MiddleName)
+            @Html.ValidationMessageFor(model => model.MiddleName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeAddress1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeAddress1)
+            @Html.ValidationMessageFor(model => model.HomeAddress1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeAddress2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeAddress2)
+            @Html.ValidationMessageFor(model => model.HomeAddress2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeState)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeState)
+            @Html.ValidationMessageFor(model => model.HomeState)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeZip)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeZip)
+            @Html.ValidationMessageFor(model => model.HomeZip)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomePhoneNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomePhoneNo)
+            @Html.ValidationMessageFor(model => model.HomePhoneNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeEmailAddr)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeEmailAddr)
+            @Html.ValidationMessageFor(model => model.HomeEmailAddr)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmploymentStatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmploymentStatus)
+            @Html.ValidationMessageFor(model => model.EmploymentStatus)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkAddress1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkAddress1)
+            @Html.ValidationMessageFor(model => model.WorkAddress1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkAddress2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkAddress2)
+            @Html.ValidationMessageFor(model => model.WorkAddress2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkCity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkCity)
+            @Html.ValidationMessageFor(model => model.WorkCity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkState)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkState)
+            @Html.ValidationMessageFor(model => model.WorkState)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkZip)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkZip)
+            @Html.ValidationMessageFor(model => model.WorkZip)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BirthDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BirthDate)
+            @Html.ValidationMessageFor(model => model.BirthDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BirthLocation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BirthLocation)
+            @Html.ValidationMessageFor(model => model.BirthLocation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BranchOfService)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BranchOfService)
+            @Html.ValidationMessageFor(model => model.BranchOfService)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsBarMember)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsBarMember)
+            @Html.ValidationMessageFor(model => model.IsBarMember)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsPracticing)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsPracticing)
+            @Html.ValidationMessageFor(model => model.IsPracticing)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasConvicted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasConvicted)
+            @Html.ValidationMessageFor(model => model.WasConvicted)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExplainConviction)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExplainConviction)
+            @Html.ValidationMessageFor(model => model.ExplainConviction)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasConvictedMilitary)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasConvictedMilitary)
+            @Html.ValidationMessageFor(model => model.WasConvictedMilitary)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExplainMilitaryConviction)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExplainMilitaryConviction)
+            @Html.ValidationMessageFor(model => model.ExplainMilitaryConviction)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsCharged)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsCharged)
+            @Html.ValidationMessageFor(model => model.IsCharged)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExplainCharges)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExplainCharges)
+            @Html.ValidationMessageFor(model => model.ExplainCharges)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasExpelled)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasExpelled)
+            @Html.ValidationMessageFor(model => model.WasExpelled)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasDisciplined)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasDisciplined)
+            @Html.ValidationMessageFor(model => model.WasDisciplined)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasTerminated)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasTerminated)
+            @Html.ValidationMessageFor(model => model.WasTerminated)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HasRepresentedGovt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HasRepresentedGovt)
+            @Html.ValidationMessageFor(model => model.HasRepresentedGovt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasBarred)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasBarred)
+            @Html.ValidationMessageFor(model => model.WasBarred)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HaveAppliedForAccred)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HaveAppliedForAccred)
+            @Html.ValidationMessageFor(model => model.HaveAppliedForAccred)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasAccredTerminated)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasAccredTerminated)
+            @Html.ValidationMessageFor(model => model.WasAccredTerminated)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsImpaired)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsImpaired)
+            @Html.ValidationMessageFor(model => model.IsImpaired)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExplainImpairment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExplainImpairment)
+            @Html.ValidationMessageFor(model => model.ExplainImpairment)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsPhysicallyLimited)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsPhysicallyLimited)
+            @Html.ValidationMessageFor(model => model.IsPhysicallyLimited)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExplainLimitation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExplainLimitation)
+            @Html.ValidationMessageFor(model => model.ExplainLimitation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateEntered)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateEntered)
+            @Html.ValidationMessageFor(model => model.DateEntered)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsProcessed)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsProcessed)
+            @Html.ValidationMessageFor(model => model.IsProcessed)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    <!-- </fieldset> -->
+
+        *@
+    -->
+ 
+        @* end using form
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@*
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+*@

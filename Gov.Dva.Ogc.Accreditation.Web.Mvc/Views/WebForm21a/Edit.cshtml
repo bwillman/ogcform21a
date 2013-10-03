@@ -1,0 +1,349 @@
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21a
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>WebForm21a</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Form21aID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Form21aID)
+            @Html.ValidationMessageFor(model => model.Form21aID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MiddleName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MiddleName)
+            @Html.ValidationMessageFor(model => model.MiddleName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeAddress1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeAddress1)
+            @Html.ValidationMessageFor(model => model.HomeAddress1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeAddress2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeAddress2)
+            @Html.ValidationMessageFor(model => model.HomeAddress2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeState)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeState)
+            @Html.ValidationMessageFor(model => model.HomeState)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeZip)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeZip)
+            @Html.ValidationMessageFor(model => model.HomeZip)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomePhoneNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomePhoneNo)
+            @Html.ValidationMessageFor(model => model.HomePhoneNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomeEmailAddr)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomeEmailAddr)
+            @Html.ValidationMessageFor(model => model.HomeEmailAddr)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmploymentStatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmploymentStatus)
+            @Html.ValidationMessageFor(model => model.EmploymentStatus)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkAddress1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkAddress1)
+            @Html.ValidationMessageFor(model => model.WorkAddress1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkAddress2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkAddress2)
+            @Html.ValidationMessageFor(model => model.WorkAddress2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkCity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkCity)
+            @Html.ValidationMessageFor(model => model.WorkCity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkState)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkState)
+            @Html.ValidationMessageFor(model => model.WorkState)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkZip)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkZip)
+            @Html.ValidationMessageFor(model => model.WorkZip)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BirthDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BirthDate)
+            @Html.ValidationMessageFor(model => model.BirthDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BirthLocation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BirthLocation)
+            @Html.ValidationMessageFor(model => model.BirthLocation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BranchOfService)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BranchOfService)
+            @Html.ValidationMessageFor(model => model.BranchOfService)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsBarMember)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsBarMember)
+            @Html.ValidationMessageFor(model => model.IsBarMember)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsPracticing)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsPracticing)
+            @Html.ValidationMessageFor(model => model.IsPracticing)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasConvicted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasConvicted)
+            @Html.ValidationMessageFor(model => model.WasConvicted)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExplainConviction)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExplainConviction)
+            @Html.ValidationMessageFor(model => model.ExplainConviction)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasConvictedMilitary)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasConvictedMilitary)
+            @Html.ValidationMessageFor(model => model.WasConvictedMilitary)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExplainMilitaryConviction)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExplainMilitaryConviction)
+            @Html.ValidationMessageFor(model => model.ExplainMilitaryConviction)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsCharged)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsCharged)
+            @Html.ValidationMessageFor(model => model.IsCharged)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExplainCharges)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExplainCharges)
+            @Html.ValidationMessageFor(model => model.ExplainCharges)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasExpelled)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasExpelled)
+            @Html.ValidationMessageFor(model => model.WasExpelled)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasDisciplined)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasDisciplined)
+            @Html.ValidationMessageFor(model => model.WasDisciplined)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasTerminated)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasTerminated)
+            @Html.ValidationMessageFor(model => model.WasTerminated)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HasRepresentedGovt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HasRepresentedGovt)
+            @Html.ValidationMessageFor(model => model.HasRepresentedGovt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasBarred)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasBarred)
+            @Html.ValidationMessageFor(model => model.WasBarred)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HaveAppliedForAccred)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HaveAppliedForAccred)
+            @Html.ValidationMessageFor(model => model.HaveAppliedForAccred)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WasAccredTerminated)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WasAccredTerminated)
+            @Html.ValidationMessageFor(model => model.WasAccredTerminated)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsImpaired)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsImpaired)
+            @Html.ValidationMessageFor(model => model.IsImpaired)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExplainImpairment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExplainImpairment)
+            @Html.ValidationMessageFor(model => model.ExplainImpairment)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsPhysicallyLimited)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsPhysicallyLimited)
+            @Html.ValidationMessageFor(model => model.IsPhysicallyLimited)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExplainLimitation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExplainLimitation)
+            @Html.ValidationMessageFor(model => model.ExplainLimitation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateEntered)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateEntered)
+            @Html.ValidationMessageFor(model => model.DateEntered)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsProcessed)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsProcessed)
+            @Html.ValidationMessageFor(model => model.IsProcessed)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

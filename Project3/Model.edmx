@@ -1,0 +1,1158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBSchemaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DBSchemaModelStoreContainer">
+          <EntitySet Name="WebAccount" EntityType="DBSchemaModel.Store.WebAccount" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21" EntityType="DBSchemaModel.Store.WebForm21" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21a" EntityType="DBSchemaModel.Store.WebForm21a" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21aBarMembership" EntityType="DBSchemaModel.Store.WebForm21aBarMembership" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21aDischargeType" EntityType="DBSchemaModel.Store.WebForm21aDischargeType" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21aEducation" EntityType="DBSchemaModel.Store.WebForm21aEducation" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21aEmployer" EntityType="DBSchemaModel.Store.WebForm21aEmployer" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21aPracticeMembership" EntityType="DBSchemaModel.Store.WebForm21aPracticeMembership" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21aReference" EntityType="DBSchemaModel.Store.WebForm21aReference" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21aServiceBranch" EntityType="DBSchemaModel.Store.WebForm21aServiceBranch" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21aServiceDate" EntityType="DBSchemaModel.Store.WebForm21aServiceDate" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21DischargeType" EntityType="DBSchemaModel.Store.WebForm21DischargeType" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21OtherAccred" EntityType="DBSchemaModel.Store.WebForm21OtherAccred" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21Qualification" EntityType="DBSchemaModel.Store.WebForm21Qualification" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21ServiceBranch" EntityType="DBSchemaModel.Store.WebForm21ServiceBranch" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebForm21ServiceDate" EntityType="DBSchemaModel.Store.WebForm21ServiceDate" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <AssociationSet Name="FK_tForm21aBranch_tForm21a" Association="DBSchemaModel.Store.FK_tForm21aBranch_tForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aServiceBranch" EntitySet="WebForm21aServiceBranch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21Accreditations_tForm21" Association="DBSchemaModel.Store.FK_tForm21Accreditations_tForm21">
+            <End Role="WebForm21" EntitySet="WebForm21" />
+            <End Role="WebForm21OtherAccred" EntitySet="WebForm21OtherAccred" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21aDischarge_tForm21a" Association="DBSchemaModel.Store.FK_tForm21aDischarge_tForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aDischargeType" EntitySet="WebForm21aDischargeType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21aServiceDate_tForm21a" Association="DBSchemaModel.Store.FK_tForm21aServiceDate_tForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aServiceDate" EntitySet="WebForm21aServiceDate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21Branch_tForm21" Association="DBSchemaModel.Store.FK_tForm21Branch_tForm21">
+            <End Role="WebForm21" EntitySet="WebForm21" />
+            <End Role="WebForm21ServiceBranch" EntitySet="WebForm21ServiceBranch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21Discharge_tForm21" Association="DBSchemaModel.Store.FK_tForm21Discharge_tForm21">
+            <End Role="WebForm21" EntitySet="WebForm21" />
+            <End Role="WebForm21DischargeType" EntitySet="WebForm21DischargeType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21Qualification_tForm21" Association="DBSchemaModel.Store.FK_tForm21Qualification_tForm21">
+            <End Role="WebForm21" EntitySet="WebForm21" />
+            <End Role="WebForm21Qualification" EntitySet="WebForm21Qualification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21ServiceDate_tForm21" Association="DBSchemaModel.Store.FK_tForm21ServiceDate_tForm21">
+            <End Role="WebForm21" EntitySet="WebForm21" />
+            <End Role="WebForm21ServiceDate" EntitySet="WebForm21ServiceDate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebForm21aBarMembership_WebForm21a" Association="DBSchemaModel.Store.FK_WebForm21aBarMembership_WebForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aBarMembership" EntitySet="WebForm21aBarMembership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebForm21aEducation_WebForm21a" Association="DBSchemaModel.Store.FK_WebForm21aEducation_WebForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aEducation" EntitySet="WebForm21aEducation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebForm21aEmployer_WebForm21a" Association="DBSchemaModel.Store.FK_WebForm21aEmployer_WebForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aEmployer" EntitySet="WebForm21aEmployer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebForm21aPracticeMembership_WebForm21a" Association="DBSchemaModel.Store.FK_WebForm21aPracticeMembership_WebForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aPracticeMembership" EntitySet="WebForm21aPracticeMembership" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="WebAccount">
+          <Key>
+            <PropertyRef Name="WebAccountID" />
+          </Key>
+          <Property Name="WebAccountID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PINSignature" Type="nchar" Nullable="false" MaxLength="5" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="75" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="75" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="75" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" />
+          <Property Name="City" Type="nvarchar" MaxLength="75" />
+          <Property Name="State" Type="nvarchar" MaxLength="30" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="30" />
+          <Property Name="RegistrationNo" Type="int" Nullable="false" />
+          <Property Name="DateOfOrigAccredition" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebForm21">
+          <Key>
+            <PropertyRef Name="Form21ID" />
+          </Key>
+          <Property Name="Form21ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FormType" Type="nvarchar" MaxLength="3" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="150" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="150" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="150" />
+          <Property Name="OrganizationName" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsGoodStanding" Type="bit" />
+          <Property Name="IsPaidMinRequirements" Type="bit" />
+          <Property Name="IsPaidAllRequirements" Type="bit" />
+          <Property Name="WorkAddressLine1" Type="nvarchar" MaxLength="100" />
+          <Property Name="WorkAddressLine2" Type="nvarchar" MaxLength="100" />
+          <Property Name="WorkCity" Type="nvarchar" MaxLength="100" />
+          <Property Name="WorkState" Type="nchar" MaxLength="2" />
+          <Property Name="WorkZipCode" Type="nchar" MaxLength="10" />
+          <Property Name="IsProcessed" Type="bit" />
+        </EntityType>
+        <EntityType Name="WebForm21a">
+          <Key>
+            <PropertyRef Name="Form21aID" />
+          </Key>
+          <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="150" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="150" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="150" />
+          <Property Name="HomeAddress1" Type="nvarchar" MaxLength="200" />
+          <Property Name="HomeAddress2" Type="nvarchar" MaxLength="200" />
+          <Property Name="HomeState" Type="nchar" MaxLength="2" />
+          <Property Name="HomeZip" Type="nchar" MaxLength="10" />
+          <Property Name="HomePhoneNo" Type="nvarchar" MaxLength="20" />
+          <Property Name="HomeEmailAddr" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmploymentStatus" Type="int" />
+          <Property Name="WorkAddress1" Type="nvarchar" MaxLength="200" />
+          <Property Name="WorkAddress2" Type="nvarchar" MaxLength="200" />
+          <Property Name="WorkCity" Type="nvarchar" MaxLength="200" />
+          <Property Name="WorkState" Type="nvarchar" MaxLength="2" />
+          <Property Name="WorkZip" Type="nvarchar" MaxLength="10" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="BirthLocation" Type="nvarchar" MaxLength="150" />
+          <Property Name="BranchOfService" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsBarMember" Type="bit" />
+          <Property Name="IsPracticing" Type="bit" />
+          <Property Name="WasConvicted" Type="bit" />
+          <Property Name="ExplainConviction" Type="nvarchar" MaxLength="1000" />
+          <Property Name="WasConvictedMilitary" Type="bit" />
+          <Property Name="ExplainMilitaryConviction" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IsCharged" Type="bit" />
+          <Property Name="ExplainCharges" Type="nvarchar" MaxLength="1000" />
+          <Property Name="WasExpelled" Type="bit" />
+          <Property Name="WasDisciplined" Type="bit" />
+          <Property Name="WasTerminated" Type="bit" />
+          <Property Name="HasRepresentedGovt" Type="bit" />
+          <Property Name="WasBarred" Type="bit" />
+          <Property Name="HaveAppliedForAccred" Type="bit" />
+          <Property Name="WasAccredTerminated" Type="bit" />
+          <Property Name="IsImpaired" Type="bit" />
+          <Property Name="ExplainImpairment" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IsPhysicallyLimited" Type="bit" />
+          <Property Name="ExplainLimitation" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DateEntered" Type="datetime" />
+          <Property Name="IsProcessed" Type="bit" />
+        </EntityType>
+        <EntityType Name="WebForm21aBarMembership">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Jurisdiction" Type="nvarchar" MaxLength="100" />
+          <Property Name="AdmissionDate" Type="date" />
+          <Property Name="MembershipNo" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="WebForm21aDischargeType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DischargeType" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="WebForm21aEducation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Institution" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="DatesAttended" Type="nvarchar" MaxLength="75" />
+          <Property Name="DegreeRecived" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="WebForm21aEmployer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="20" />
+          <Property Name="PositionTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="DateRangeEmpBegin" Type="date" />
+          <Property Name="DateRangeEmpEnd" Type="date" />
+          <Property Name="Supervisor" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="WebForm21aPracticeMembership">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Agency" Type="nvarchar" MaxLength="150" />
+          <Property Name="AdmissionDate" Type="date" />
+          <Property Name="MembershipNo" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="WebForm21aReference">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="20" />
+          <Property Name="Relationship" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WebForm21aServiceBranch">
+          <Key>
+            <PropertyRef Name="Form21aID" />
+          </Key>
+          <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsArmy" Type="bit" />
+          <Property Name="IsNavy" Type="bit" />
+          <Property Name="IsAirForce" Type="bit" />
+          <Property Name="IsMarines" Type="bit" />
+          <Property Name="IsCoastGuard" Type="bit" />
+          <Property Name="IsNonVeteran" Type="bit" />
+          <Property Name="IsOther" Type="bit" />
+          <Property Name="OtherService" Type="nvarchar" Nullable="false" MaxLength="35" />
+        </EntityType>
+        <EntityType Name="WebForm21aServiceDate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ActiveServiceDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebForm21DischargeType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form21ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DischargeType" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="WebForm21OtherAccred">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form21ID" Type="uniqueidentifier" />
+          <Property Name="OrganizationName" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="WebForm21Qualification">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form21ID" Type="uniqueidentifier" />
+          <Property Name="HasCompletedCourse" Type="bit" />
+          <Property Name="HasPassedExam" Type="bit" />
+          <Property Name="HasExperience" Type="bit" />
+        </EntityType>
+        <EntityType Name="WebForm21ServiceBranch">
+          <Key>
+            <PropertyRef Name="Form21ID" />
+          </Key>
+          <Property Name="Form21ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsArmy" Type="bit" />
+          <Property Name="IsNavy" Type="bit" />
+          <Property Name="IsAirForce" Type="bit" />
+          <Property Name="IsMarines" Type="bit" />
+          <Property Name="IsCoastGuard" Type="bit" />
+          <Property Name="IsNonVeteran" Type="bit" />
+          <Property Name="IsOther" Type="bit" />
+          <Property Name="OtherService" Type="nvarchar" Nullable="false" MaxLength="35" />
+        </EntityType>
+        <EntityType Name="WebForm21ServiceDate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form21ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ActiveServiceDate" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tForm21aBranch_tForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.Store.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aServiceBranch" Type="DBSchemaModel.Store.WebForm21aServiceBranch" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aServiceBranch">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21Accreditations_tForm21">
+          <End Role="WebForm21" Type="DBSchemaModel.Store.WebForm21" Multiplicity="0..1" />
+          <End Role="WebForm21OtherAccred" Type="DBSchemaModel.Store.WebForm21OtherAccred" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21">
+              <PropertyRef Name="Form21ID" />
+            </Principal>
+            <Dependent Role="WebForm21OtherAccred">
+              <PropertyRef Name="Form21ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21aDischarge_tForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.Store.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aDischargeType" Type="DBSchemaModel.Store.WebForm21aDischargeType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aDischargeType">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21aServiceDate_tForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.Store.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aServiceDate" Type="DBSchemaModel.Store.WebForm21aServiceDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aServiceDate">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21Branch_tForm21">
+          <End Role="WebForm21" Type="DBSchemaModel.Store.WebForm21" Multiplicity="1" />
+          <End Role="WebForm21ServiceBranch" Type="DBSchemaModel.Store.WebForm21ServiceBranch" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21">
+              <PropertyRef Name="Form21ID" />
+            </Principal>
+            <Dependent Role="WebForm21ServiceBranch">
+              <PropertyRef Name="Form21ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21Discharge_tForm21">
+          <End Role="WebForm21" Type="DBSchemaModel.Store.WebForm21" Multiplicity="1" />
+          <End Role="WebForm21DischargeType" Type="DBSchemaModel.Store.WebForm21DischargeType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21">
+              <PropertyRef Name="Form21ID" />
+            </Principal>
+            <Dependent Role="WebForm21DischargeType">
+              <PropertyRef Name="Form21ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21Qualification_tForm21">
+          <End Role="WebForm21" Type="DBSchemaModel.Store.WebForm21" Multiplicity="0..1" />
+          <End Role="WebForm21Qualification" Type="DBSchemaModel.Store.WebForm21Qualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21">
+              <PropertyRef Name="Form21ID" />
+            </Principal>
+            <Dependent Role="WebForm21Qualification">
+              <PropertyRef Name="Form21ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21ServiceDate_tForm21">
+          <End Role="WebForm21" Type="DBSchemaModel.Store.WebForm21" Multiplicity="1" />
+          <End Role="WebForm21ServiceDate" Type="DBSchemaModel.Store.WebForm21ServiceDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21">
+              <PropertyRef Name="Form21ID" />
+            </Principal>
+            <Dependent Role="WebForm21ServiceDate">
+              <PropertyRef Name="Form21ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebForm21aBarMembership_WebForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.Store.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aBarMembership" Type="DBSchemaModel.Store.WebForm21aBarMembership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aBarMembership">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebForm21aEducation_WebForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.Store.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aEducation" Type="DBSchemaModel.Store.WebForm21aEducation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aEducation">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebForm21aEmployer_WebForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.Store.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aEmployer" Type="DBSchemaModel.Store.WebForm21aEmployer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aEmployer">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebForm21aPracticeMembership_WebForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.Store.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aPracticeMembership" Type="DBSchemaModel.Store.WebForm21aPracticeMembership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aPracticeMembership">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBSchemaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="DBSchemaEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="WebAccounts" EntityType="DBSchemaModel.WebAccount" />
+          <EntitySet Name="WebForm21" EntityType="DBSchemaModel.WebForm21" />
+          <EntitySet Name="WebForm21a" EntityType="DBSchemaModel.WebForm21a" />
+          <EntitySet Name="WebForm21aBarMembership" EntityType="DBSchemaModel.WebForm21aBarMembership" />
+          <EntitySet Name="WebForm21aDischargeType" EntityType="DBSchemaModel.WebForm21aDischargeType" />
+          <EntitySet Name="WebForm21aEducation" EntityType="DBSchemaModel.WebForm21aEducation" />
+          <EntitySet Name="WebForm21aEmployer" EntityType="DBSchemaModel.WebForm21aEmployer" />
+          <EntitySet Name="WebForm21aPracticeMembership" EntityType="DBSchemaModel.WebForm21aPracticeMembership" />
+          <EntitySet Name="WebForm21aReference" EntityType="DBSchemaModel.WebForm21aReference" />
+          <EntitySet Name="WebForm21aServiceBranch" EntityType="DBSchemaModel.WebForm21aServiceBranch" />
+          <EntitySet Name="WebForm21aServiceDate" EntityType="DBSchemaModel.WebForm21aServiceDate" />
+          <EntitySet Name="WebForm21DischargeType" EntityType="DBSchemaModel.WebForm21DischargeType" />
+          <EntitySet Name="WebForm21OtherAccred" EntityType="DBSchemaModel.WebForm21OtherAccred" />
+          <EntitySet Name="WebForm21Qualification" EntityType="DBSchemaModel.WebForm21Qualification" />
+          <EntitySet Name="WebForm21ServiceBranch" EntityType="DBSchemaModel.WebForm21ServiceBranch" />
+          <EntitySet Name="WebForm21ServiceDate" EntityType="DBSchemaModel.WebForm21ServiceDate" />
+          <AssociationSet Name="FK_tForm21Accreditations_tForm21" Association="DBSchemaModel.FK_tForm21Accreditations_tForm21">
+            <End Role="WebForm21" EntitySet="WebForm21" />
+            <End Role="WebForm21OtherAccred" EntitySet="WebForm21OtherAccred" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21Branch_tForm21" Association="DBSchemaModel.FK_tForm21Branch_tForm21">
+            <End Role="WebForm21" EntitySet="WebForm21" />
+            <End Role="WebForm21ServiceBranch" EntitySet="WebForm21ServiceBranch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21Discharge_tForm21" Association="DBSchemaModel.FK_tForm21Discharge_tForm21">
+            <End Role="WebForm21" EntitySet="WebForm21" />
+            <End Role="WebForm21DischargeType" EntitySet="WebForm21DischargeType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21Qualification_tForm21" Association="DBSchemaModel.FK_tForm21Qualification_tForm21">
+            <End Role="WebForm21" EntitySet="WebForm21" />
+            <End Role="WebForm21Qualification" EntitySet="WebForm21Qualification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21ServiceDate_tForm21" Association="DBSchemaModel.FK_tForm21ServiceDate_tForm21">
+            <End Role="WebForm21" EntitySet="WebForm21" />
+            <End Role="WebForm21ServiceDate" EntitySet="WebForm21ServiceDate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21aBranch_tForm21a" Association="DBSchemaModel.FK_tForm21aBranch_tForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aServiceBranch" EntitySet="WebForm21aServiceBranch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21aDischarge_tForm21a" Association="DBSchemaModel.FK_tForm21aDischarge_tForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aDischargeType" EntitySet="WebForm21aDischargeType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tForm21aServiceDate_tForm21a" Association="DBSchemaModel.FK_tForm21aServiceDate_tForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aServiceDate" EntitySet="WebForm21aServiceDate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebForm21aBarMembership_WebForm21a" Association="DBSchemaModel.FK_WebForm21aBarMembership_WebForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aBarMembership" EntitySet="WebForm21aBarMembership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebForm21aEducation_WebForm21a" Association="DBSchemaModel.FK_WebForm21aEducation_WebForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aEducation" EntitySet="WebForm21aEducation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebForm21aEmployer_WebForm21a" Association="DBSchemaModel.FK_WebForm21aEmployer_WebForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aEmployer" EntitySet="WebForm21aEmployer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebForm21aPracticeMembership_WebForm21a" Association="DBSchemaModel.FK_WebForm21aPracticeMembership_WebForm21a">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aPracticeMembership" EntitySet="WebForm21aPracticeMembership" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="WebAccount">
+          <Key>
+            <PropertyRef Name="WebAccountID" />
+          </Key>
+          <Property Name="WebAccountID" Type="Guid" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PINSignature" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="75" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="75" Unicode="true" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="75" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="75" Unicode="true" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="PhoneNo" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="RegistrationNo" Type="Int32" Nullable="false" />
+          <Property Name="DateOfOrigAccredition" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="WebForm21">
+          <Key>
+            <PropertyRef Name="Form21ID" />
+          </Key>
+          <Property Name="Form21ID" Type="Guid" Nullable="false" />
+          <Property Name="FormType" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="OrganizationName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="IsGoodStanding" Type="Boolean" />
+          <Property Name="IsPaidMinRequirements" Type="Boolean" />
+          <Property Name="IsPaidAllRequirements" Type="Boolean" />
+          <Property Name="WorkAddressLine1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="WorkAddressLine2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="WorkCity" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="WorkState" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
+          <Property Name="WorkZipCode" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="IsProcessed" Type="Boolean" />
+          <NavigationProperty Name="WebForm21OtherAccred" Relationship="DBSchemaModel.FK_tForm21Accreditations_tForm21" FromRole="WebForm21" ToRole="WebForm21OtherAccred" />
+          <NavigationProperty Name="WebForm21ServiceBranch" Relationship="DBSchemaModel.FK_tForm21Branch_tForm21" FromRole="WebForm21" ToRole="WebForm21ServiceBranch" />
+          <NavigationProperty Name="WebForm21DischargeType" Relationship="DBSchemaModel.FK_tForm21Discharge_tForm21" FromRole="WebForm21" ToRole="WebForm21DischargeType" />
+          <NavigationProperty Name="WebForm21Qualification" Relationship="DBSchemaModel.FK_tForm21Qualification_tForm21" FromRole="WebForm21" ToRole="WebForm21Qualification" />
+          <NavigationProperty Name="WebForm21ServiceDate" Relationship="DBSchemaModel.FK_tForm21ServiceDate_tForm21" FromRole="WebForm21" ToRole="WebForm21ServiceDate" />
+        </EntityType>
+        <EntityType Name="WebForm21a">
+          <Key>
+            <PropertyRef Name="Form21aID" />
+          </Key>
+          <Property Name="Form21aID" Type="Guid" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="HomeAddress1" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="HomeAddress2" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="HomeState" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
+          <Property Name="HomeZip" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="HomePhoneNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="HomeEmailAddr" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="EmploymentStatus" Type="Int32" />
+          <Property Name="WorkAddress1" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="WorkAddress2" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="WorkCity" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="WorkState" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="WorkZip" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="BirthLocation" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="BranchOfService" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsBarMember" Type="Boolean" />
+          <Property Name="IsPracticing" Type="Boolean" />
+          <Property Name="WasConvicted" Type="Boolean" />
+          <Property Name="ExplainConviction" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="WasConvictedMilitary" Type="Boolean" />
+          <Property Name="ExplainMilitaryConviction" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="IsCharged" Type="Boolean" />
+          <Property Name="ExplainCharges" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="WasExpelled" Type="Boolean" />
+          <Property Name="WasDisciplined" Type="Boolean" />
+          <Property Name="WasTerminated" Type="Boolean" />
+          <Property Name="HasRepresentedGovt" Type="Boolean" />
+          <Property Name="WasBarred" Type="Boolean" />
+          <Property Name="HaveAppliedForAccred" Type="Boolean" />
+          <Property Name="WasAccredTerminated" Type="Boolean" />
+          <Property Name="IsImpaired" Type="Boolean" />
+          <Property Name="ExplainImpairment" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="IsPhysicallyLimited" Type="Boolean" />
+          <Property Name="ExplainLimitation" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="DateEntered" Type="DateTime" Precision="3" />
+          <Property Name="IsProcessed" Type="Boolean" />
+          <NavigationProperty Name="WebForm21aServiceBranch" Relationship="DBSchemaModel.FK_tForm21aBranch_tForm21a" FromRole="WebForm21a" ToRole="WebForm21aServiceBranch" />
+          <NavigationProperty Name="WebForm21aDischargeType" Relationship="DBSchemaModel.FK_tForm21aDischarge_tForm21a" FromRole="WebForm21a" ToRole="WebForm21aDischargeType" />
+          <NavigationProperty Name="WebForm21aServiceDate" Relationship="DBSchemaModel.FK_tForm21aServiceDate_tForm21a" FromRole="WebForm21a" ToRole="WebForm21aServiceDate" />
+          <NavigationProperty Name="WebForm21aBarMembership" Relationship="DBSchemaModel.FK_WebForm21aBarMembership_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aBarMembership" />
+          <NavigationProperty Name="WebForm21aEducation" Relationship="DBSchemaModel.FK_WebForm21aEducation_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aEducation" />
+          <NavigationProperty Name="WebForm21aEmployer" Relationship="DBSchemaModel.FK_WebForm21aEmployer_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aEmployer" />
+          <NavigationProperty Name="WebForm21aPracticeMembership" Relationship="DBSchemaModel.FK_WebForm21aPracticeMembership_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aPracticeMembership" />
+        </EntityType>
+        <EntityType Name="WebForm21aBarMembership">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Form21aID" Type="Guid" Nullable="false" />
+          <Property Name="Jurisdiction" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="AdmissionDate" Type="DateTime" Precision="0" />
+          <Property Name="MembershipNo" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_WebForm21aBarMembership_WebForm21a" FromRole="WebForm21aBarMembership" ToRole="WebForm21a" />
+        </EntityType>
+        <EntityType Name="WebForm21aDischargeType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Form21aID" Type="Guid" Nullable="false" />
+          <Property Name="DischargeType" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_tForm21aDischarge_tForm21a" FromRole="WebForm21aDischargeType" ToRole="WebForm21a" />
+        </EntityType>
+        <EntityType Name="WebForm21aEducation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Form21aID" Type="Guid" Nullable="false" />
+          <Property Name="Institution" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="DatesAttended" Type="String" MaxLength="75" Unicode="true" FixedLength="false" />
+          <Property Name="DegreeRecived" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_WebForm21aEducation_WebForm21a" FromRole="WebForm21aEducation" ToRole="WebForm21a" />
+        </EntityType>
+        <EntityType Name="WebForm21aEmployer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Form21aID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="PhoneNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="PositionTitle" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DateRangeEmpBegin" Type="DateTime" Precision="0" />
+          <Property Name="DateRangeEmpEnd" Type="DateTime" Precision="0" />
+          <Property Name="Supervisor" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_WebForm21aEmployer_WebForm21a" FromRole="WebForm21aEmployer" ToRole="WebForm21a" />
+        </EntityType>
+        <EntityType Name="WebForm21aPracticeMembership">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Form21aID" Type="Guid" Nullable="false" />
+          <Property Name="Agency" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="AdmissionDate" Type="DateTime" Precision="0" />
+          <Property Name="MembershipNo" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_WebForm21aPracticeMembership_WebForm21a" FromRole="WebForm21aPracticeMembership" ToRole="WebForm21a" />
+        </EntityType>
+        <EntityType Name="WebForm21aReference">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Form21aID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="PhoneNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Relationship" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WebForm21aServiceBranch">
+          <Key>
+            <PropertyRef Name="Form21aID" />
+          </Key>
+          <Property Name="Form21aID" Type="Guid" Nullable="false" />
+          <Property Name="IsArmy" Type="Boolean" />
+          <Property Name="IsNavy" Type="Boolean" />
+          <Property Name="IsAirForce" Type="Boolean" />
+          <Property Name="IsMarines" Type="Boolean" />
+          <Property Name="IsCoastGuard" Type="Boolean" />
+          <Property Name="IsNonVeteran" Type="Boolean" />
+          <Property Name="IsOther" Type="Boolean" />
+          <Property Name="OtherService" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_tForm21aBranch_tForm21a" FromRole="WebForm21aServiceBranch" ToRole="WebForm21a" />
+        </EntityType>
+        <EntityType Name="WebForm21aServiceDate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Form21aID" Type="Guid" Nullable="false" />
+          <Property Name="ActiveServiceDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_tForm21aServiceDate_tForm21a" FromRole="WebForm21aServiceDate" ToRole="WebForm21a" />
+        </EntityType>
+        <EntityType Name="WebForm21DischargeType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Form21ID" Type="Guid" Nullable="false" />
+          <Property Name="DischargeType" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="WebForm21" Relationship="DBSchemaModel.FK_tForm21Discharge_tForm21" FromRole="WebForm21DischargeType" ToRole="WebForm21" />
+        </EntityType>
+        <EntityType Name="WebForm21OtherAccred">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Form21ID" Type="Guid" />
+          <Property Name="OrganizationName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="WebForm21" Relationship="DBSchemaModel.FK_tForm21Accreditations_tForm21" FromRole="WebForm21OtherAccred" ToRole="WebForm21" />
+        </EntityType>
+        <EntityType Name="WebForm21Qualification">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Form21ID" Type="Guid" />
+          <Property Name="HasCompletedCourse" Type="Boolean" />
+          <Property Name="HasPassedExam" Type="Boolean" />
+          <Property Name="HasExperience" Type="Boolean" />
+          <NavigationProperty Name="WebForm21" Relationship="DBSchemaModel.FK_tForm21Qualification_tForm21" FromRole="WebForm21Qualification" ToRole="WebForm21" />
+        </EntityType>
+        <EntityType Name="WebForm21ServiceBranch">
+          <Key>
+            <PropertyRef Name="Form21ID" />
+          </Key>
+          <Property Name="Form21ID" Type="Guid" Nullable="false" />
+          <Property Name="IsArmy" Type="Boolean" />
+          <Property Name="IsNavy" Type="Boolean" />
+          <Property Name="IsAirForce" Type="Boolean" />
+          <Property Name="IsMarines" Type="Boolean" />
+          <Property Name="IsCoastGuard" Type="Boolean" />
+          <Property Name="IsNonVeteran" Type="Boolean" />
+          <Property Name="IsOther" Type="Boolean" />
+          <Property Name="OtherService" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="WebForm21" Relationship="DBSchemaModel.FK_tForm21Branch_tForm21" FromRole="WebForm21ServiceBranch" ToRole="WebForm21" />
+        </EntityType>
+        <EntityType Name="WebForm21ServiceDate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Form21ID" Type="Guid" Nullable="false" />
+          <Property Name="ActiveServiceDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="WebForm21" Relationship="DBSchemaModel.FK_tForm21ServiceDate_tForm21" FromRole="WebForm21ServiceDate" ToRole="WebForm21" />
+        </EntityType>
+        <Association Name="FK_tForm21Accreditations_tForm21">
+          <End Role="WebForm21" Type="DBSchemaModel.WebForm21" Multiplicity="0..1" />
+          <End Role="WebForm21OtherAccred" Type="DBSchemaModel.WebForm21OtherAccred" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21">
+              <PropertyRef Name="Form21ID" />
+            </Principal>
+            <Dependent Role="WebForm21OtherAccred">
+              <PropertyRef Name="Form21ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21Branch_tForm21">
+          <End Role="WebForm21" Type="DBSchemaModel.WebForm21" Multiplicity="1" />
+          <End Role="WebForm21ServiceBranch" Type="DBSchemaModel.WebForm21ServiceBranch" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21">
+              <PropertyRef Name="Form21ID" />
+            </Principal>
+            <Dependent Role="WebForm21ServiceBranch">
+              <PropertyRef Name="Form21ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21Discharge_tForm21">
+          <End Role="WebForm21" Type="DBSchemaModel.WebForm21" Multiplicity="1" />
+          <End Role="WebForm21DischargeType" Type="DBSchemaModel.WebForm21DischargeType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21">
+              <PropertyRef Name="Form21ID" />
+            </Principal>
+            <Dependent Role="WebForm21DischargeType">
+              <PropertyRef Name="Form21ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21Qualification_tForm21">
+          <End Role="WebForm21" Type="DBSchemaModel.WebForm21" Multiplicity="0..1" />
+          <End Role="WebForm21Qualification" Type="DBSchemaModel.WebForm21Qualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21">
+              <PropertyRef Name="Form21ID" />
+            </Principal>
+            <Dependent Role="WebForm21Qualification">
+              <PropertyRef Name="Form21ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21ServiceDate_tForm21">
+          <End Role="WebForm21" Type="DBSchemaModel.WebForm21" Multiplicity="1" />
+          <End Role="WebForm21ServiceDate" Type="DBSchemaModel.WebForm21ServiceDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21">
+              <PropertyRef Name="Form21ID" />
+            </Principal>
+            <Dependent Role="WebForm21ServiceDate">
+              <PropertyRef Name="Form21ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21aBranch_tForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aServiceBranch" Type="DBSchemaModel.WebForm21aServiceBranch" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aServiceBranch">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21aDischarge_tForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aDischargeType" Type="DBSchemaModel.WebForm21aDischargeType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aDischargeType">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tForm21aServiceDate_tForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aServiceDate" Type="DBSchemaModel.WebForm21aServiceDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aServiceDate">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebForm21aBarMembership_WebForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aBarMembership" Type="DBSchemaModel.WebForm21aBarMembership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aBarMembership">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebForm21aEducation_WebForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aEducation" Type="DBSchemaModel.WebForm21aEducation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aEducation">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebForm21aEmployer_WebForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aEmployer" Type="DBSchemaModel.WebForm21aEmployer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aEmployer">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebForm21aPracticeMembership_WebForm21a">
+          <End Role="WebForm21a" Type="DBSchemaModel.WebForm21a" Multiplicity="1" />
+          <End Role="WebForm21aPracticeMembership" Type="DBSchemaModel.WebForm21aPracticeMembership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aPracticeMembership">
+              <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBSchemaModelStoreContainer" CdmEntityContainer="DBSchemaEntities">
+          <EntitySetMapping Name="WebAccounts">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebAccount">
+              <MappingFragment StoreEntitySet="WebAccount">
+                <ScalarProperty Name="WebAccountID" ColumnName="WebAccountID" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PINSignature" ColumnName="PINSignature" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+                <ScalarProperty Name="DateOfOrigAccredition" ColumnName="DateOfOrigAccredition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21">
+              <MappingFragment StoreEntitySet="WebForm21">
+                <ScalarProperty Name="Form21ID" ColumnName="Form21ID" />
+                <ScalarProperty Name="FormType" ColumnName="FormType" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
+                <ScalarProperty Name="IsGoodStanding" ColumnName="IsGoodStanding" />
+                <ScalarProperty Name="IsPaidMinRequirements" ColumnName="IsPaidMinRequirements" />
+                <ScalarProperty Name="IsPaidAllRequirements" ColumnName="IsPaidAllRequirements" />
+                <ScalarProperty Name="WorkAddressLine1" ColumnName="WorkAddressLine1" />
+                <ScalarProperty Name="WorkAddressLine2" ColumnName="WorkAddressLine2" />
+                <ScalarProperty Name="WorkCity" ColumnName="WorkCity" />
+                <ScalarProperty Name="WorkState" ColumnName="WorkState" />
+                <ScalarProperty Name="WorkZipCode" ColumnName="WorkZipCode" />
+                <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21a">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21a">
+              <MappingFragment StoreEntitySet="WebForm21a">
+                <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="HomeAddress1" ColumnName="HomeAddress1" />
+                <ScalarProperty Name="HomeAddress2" ColumnName="HomeAddress2" />
+                <ScalarProperty Name="HomeState" ColumnName="HomeState" />
+                <ScalarProperty Name="HomeZip" ColumnName="HomeZip" />
+                <ScalarProperty Name="HomePhoneNo" ColumnName="HomePhoneNo" />
+                <ScalarProperty Name="HomeEmailAddr" ColumnName="HomeEmailAddr" />
+                <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+                <ScalarProperty Name="WorkAddress1" ColumnName="WorkAddress1" />
+                <ScalarProperty Name="WorkAddress2" ColumnName="WorkAddress2" />
+                <ScalarProperty Name="WorkCity" ColumnName="WorkCity" />
+                <ScalarProperty Name="WorkState" ColumnName="WorkState" />
+                <ScalarProperty Name="WorkZip" ColumnName="WorkZip" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="BirthLocation" ColumnName="BirthLocation" />
+                <ScalarProperty Name="BranchOfService" ColumnName="BranchOfService" />
+                <ScalarProperty Name="IsBarMember" ColumnName="IsBarMember" />
+                <ScalarProperty Name="IsPracticing" ColumnName="IsPracticing" />
+                <ScalarProperty Name="WasConvicted" ColumnName="WasConvicted" />
+                <ScalarProperty Name="ExplainConviction" ColumnName="ExplainConviction" />
+                <ScalarProperty Name="WasConvictedMilitary" ColumnName="WasConvictedMilitary" />
+                <ScalarProperty Name="ExplainMilitaryConviction" ColumnName="ExplainMilitaryConviction" />
+                <ScalarProperty Name="IsCharged" ColumnName="IsCharged" />
+                <ScalarProperty Name="ExplainCharges" ColumnName="ExplainCharges" />
+                <ScalarProperty Name="WasExpelled" ColumnName="WasExpelled" />
+                <ScalarProperty Name="WasDisciplined" ColumnName="WasDisciplined" />
+                <ScalarProperty Name="WasTerminated" ColumnName="WasTerminated" />
+                <ScalarProperty Name="HasRepresentedGovt" ColumnName="HasRepresentedGovt" />
+                <ScalarProperty Name="WasBarred" ColumnName="WasBarred" />
+                <ScalarProperty Name="HaveAppliedForAccred" ColumnName="HaveAppliedForAccred" />
+                <ScalarProperty Name="WasAccredTerminated" ColumnName="WasAccredTerminated" />
+                <ScalarProperty Name="IsImpaired" ColumnName="IsImpaired" />
+                <ScalarProperty Name="ExplainImpairment" ColumnName="ExplainImpairment" />
+                <ScalarProperty Name="IsPhysicallyLimited" ColumnName="IsPhysicallyLimited" />
+                <ScalarProperty Name="ExplainLimitation" ColumnName="ExplainLimitation" />
+                <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+                <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21aBarMembership">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aBarMembership">
+              <MappingFragment StoreEntitySet="WebForm21aBarMembership">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
+                <ScalarProperty Name="Jurisdiction" ColumnName="Jurisdiction" />
+                <ScalarProperty Name="AdmissionDate" ColumnName="AdmissionDate" />
+                <ScalarProperty Name="MembershipNo" ColumnName="MembershipNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21aDischargeType">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aDischargeType">
+              <MappingFragment StoreEntitySet="WebForm21aDischargeType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
+                <ScalarProperty Name="DischargeType" ColumnName="DischargeType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21aEducation">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aEducation">
+              <MappingFragment StoreEntitySet="WebForm21aEducation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
+                <ScalarProperty Name="Institution" ColumnName="Institution" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="DatesAttended" ColumnName="DatesAttended" />
+                <ScalarProperty Name="DegreeRecived" ColumnName="DegreeRecived" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21aEmployer">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aEmployer">
+              <MappingFragment StoreEntitySet="WebForm21aEmployer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="PositionTitle" ColumnName="PositionTitle" />
+                <ScalarProperty Name="DateRangeEmpBegin" ColumnName="DateRangeEmpBegin" />
+                <ScalarProperty Name="DateRangeEmpEnd" ColumnName="DateRangeEmpEnd" />
+                <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21aPracticeMembership">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aPracticeMembership">
+              <MappingFragment StoreEntitySet="WebForm21aPracticeMembership">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
+                <ScalarProperty Name="Agency" ColumnName="Agency" />
+                <ScalarProperty Name="AdmissionDate" ColumnName="AdmissionDate" />
+                <ScalarProperty Name="MembershipNo" ColumnName="MembershipNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21aReference">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aReference">
+              <MappingFragment StoreEntitySet="WebForm21aReference">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21aServiceBranch">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aServiceBranch">
+              <MappingFragment StoreEntitySet="WebForm21aServiceBranch">
+                <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
+                <ScalarProperty Name="IsArmy" ColumnName="IsArmy" />
+                <ScalarProperty Name="IsNavy" ColumnName="IsNavy" />
+                <ScalarProperty Name="IsAirForce" ColumnName="IsAirForce" />
+                <ScalarProperty Name="IsMarines" ColumnName="IsMarines" />
+                <ScalarProperty Name="IsCoastGuard" ColumnName="IsCoastGuard" />
+                <ScalarProperty Name="IsNonVeteran" ColumnName="IsNonVeteran" />
+                <ScalarProperty Name="IsOther" ColumnName="IsOther" />
+                <ScalarProperty Name="OtherService" ColumnName="OtherService" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21aServiceDate">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aServiceDate">
+              <MappingFragment StoreEntitySet="WebForm21aServiceDate">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
+                <ScalarProperty Name="ActiveServiceDate" ColumnName="ActiveServiceDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21DischargeType">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21DischargeType">
+              <MappingFragment StoreEntitySet="WebForm21DischargeType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Form21ID" ColumnName="Form21ID" />
+                <ScalarProperty Name="DischargeType" ColumnName="DischargeType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21OtherAccred">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21OtherAccred">
+              <MappingFragment StoreEntitySet="WebForm21OtherAccred">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Form21ID" ColumnName="Form21ID" />
+                <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21Qualification">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21Qualification">
+              <MappingFragment StoreEntitySet="WebForm21Qualification">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Form21ID" ColumnName="Form21ID" />
+                <ScalarProperty Name="HasCompletedCourse" ColumnName="HasCompletedCourse" />
+                <ScalarProperty Name="HasPassedExam" ColumnName="HasPassedExam" />
+                <ScalarProperty Name="HasExperience" ColumnName="HasExperience" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21ServiceBranch">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21ServiceBranch">
+              <MappingFragment StoreEntitySet="WebForm21ServiceBranch">
+                <ScalarProperty Name="Form21ID" ColumnName="Form21ID" />
+                <ScalarProperty Name="IsArmy" ColumnName="IsArmy" />
+                <ScalarProperty Name="IsNavy" ColumnName="IsNavy" />
+                <ScalarProperty Name="IsAirForce" ColumnName="IsAirForce" />
+                <ScalarProperty Name="IsMarines" ColumnName="IsMarines" />
+                <ScalarProperty Name="IsCoastGuard" ColumnName="IsCoastGuard" />
+                <ScalarProperty Name="IsNonVeteran" ColumnName="IsNonVeteran" />
+                <ScalarProperty Name="IsOther" ColumnName="IsOther" />
+                <ScalarProperty Name="OtherService" ColumnName="OtherService" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebForm21ServiceDate">
+            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21ServiceDate">
+              <MappingFragment StoreEntitySet="WebForm21ServiceDate">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Form21ID" ColumnName="Form21ID" />
+                <ScalarProperty Name="ActiveServiceDate" ColumnName="ActiveServiceDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>

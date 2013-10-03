@@ -1,0 +1,26 @@
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21aBarMembership
+
+@{
+    Layout = null;
+}
+
+	  		<tr>
+	  			<td>
+                @Html.TextBoxFor(model => model.Jurisdiction, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Jurisdiction)
+	  			</td>
+	  			<td>
+                @Html.TextBoxFor(model => model.AdmissionDate, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AdmissionDate)
+
+	  			</td>
+	  			<td>
+                @Html.TextBoxFor(model => model.MembershipNo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MembershipNo)
+
+	  			</td>
+	  		</tr>
+   
+    
+    
+    

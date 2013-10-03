@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+  	<link rel="stylesheet" type="text/css" href="~/Content/form21.css">
+  	<link rel="stylesheet" href="~/Content/bootstrap/bootstrap.css">
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+  	<script src="~/Content/bootstrap/bootstrap.js"></script>
+
+
+      	<script type="text/javascript">
+
+
+      	    var navigation_click = function (step) {
+      	        //step is 1 through 5
+      	        $(".circle").css("background-color", "");
+      	        $(".field_section").css("display", "none");
+      	        $("#step_" + step).css("background-color", "#ab9931");
+      	        //$("#section_" + step).css("display", "block");
+      	        $("#section_" + step).fadeIn();
+      	        window.scrollTo(0, 0);
+
+      	    }
+
+      	    $(document).ready(function () {
+      	        navigation_click("2");
+      	        //$('div').css("border", "1px solid #000000");
+                //bar membership
+      	        $("input[id='IsBarMember']").click(function () {
+      	            if (this.value == "True") { $("#jurisdiction_section").slideDown(); }
+      	            else { $("#jurisdiction_section").slideUp(); }
+
+      	        })
+                //is practicing
+      	        $("input[id='IsPracticing']").click(function () {
+      	            if (this.value == "True") { $("#practice_section").slideDown(); }
+      	            else { $("#practice_section").slideUp(); }
+      	        })
+      	        //was convicted
+      	        $("input[id='WasConvicted']").click(function () {
+      	            if (this.value == "True") { $("#was_convicted_section").slideDown(); }
+      	            else { $("#was_convicted_section").slideUp(); }
+      	        })
+      	        //was convicted military
+      	        $("input[id='WasConvictedMilitary']").click(function () {
+      	            if (this.value == "True") { $("#was_convicted_military_explanation").slideDown(); }
+      	            else { $("#was_convicted_military_explanation").slideUp(); }
+      	        })
+      	        //Is charged
+      	        $("input[id='IsCharged']").click(function () {
+      	            if (this.value == "True") { $("#is_charged_explanation").slideDown(); }
+      	            else { $("#is_charged_explanation").slideUp(); }
+      	        })
+      	        //Is Impaired
+      	        $("input[id='IsImpaired']").click(function () {
+      	            if (this.value == "True") { $("#is_impaired_explanation").slideDown(); }
+      	            else { $("#is_impaired_explanation").slideUp(); }
+      	        })
+      	        //Is physically limited
+      	        $("input[id='IsPhysicallyLimited']").click(function () {
+      	            if (this.value == "True") { $("#is_physically_limited_explanation").slideDown(); }
+      	            else { $("#is_physically_limited_explanation").slideUp(); }
+      	        })
+
+      	    })
+
+  	</script>
+
+</head>
+<body>
+    <div style="width: 800px">
+        <div class="container">
+            @RenderBody()
+        </div>
+
+    </div>
+</body>
+</html>

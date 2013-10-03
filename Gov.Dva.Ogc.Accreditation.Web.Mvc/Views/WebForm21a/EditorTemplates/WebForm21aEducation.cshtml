@@ -1,0 +1,46 @@
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21aEducation
+
+@{
+    Layout = null;
+}
+
+
+		<div class="collection_box">
+			<div class="row">
+				<div class="col-md-12">
+					<h4>Education Institution #x</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<label>Name of Institution</label>
+                    @Html.TextBoxFor(model => model.Institution, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.Institution)
+                    <br />
+					<label>Address</label><br />
+                    @Html.TextAreaFor(model => model.Address, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.Address)
+						
+				</div>
+				<div class="col-md-4">
+					<label>Dates Attended</label><br>
+                    @Html.TextBoxFor(model => model.DatesAttended, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.DatesAttended)
+                    <!-- 
+					<div style="width: 50px; display: inline-block">From: </div>
+	    			<input type="datetime" id="date_range_emp_begin" name="date_range_emp_bein" class="form-control" style="width: auto; display: inline-block"><p></p>
+					<div style="width: 50px; display: inline-block">To: </div> 		  			
+					<input type="datetime" id="date_range_emp_end" name="date_range_emp_end" class="form-control" style="width: auto; display: inline-block">			
+                        -->
+				</div>
+				<div class="col-md-4">
+					<label>Degree Received/Major</label>
+                    @Html.TextBoxFor(model => model.DegreeRecived, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.DegreeRecived)
+				</div>
+								
+			</div>
+				
+		</div>
+
+
