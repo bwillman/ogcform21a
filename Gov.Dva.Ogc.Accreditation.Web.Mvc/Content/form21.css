@@ -11,20 +11,21 @@ body {
 }
 
 #progress {
-	font-size: 12pt;
+	font-size: 10pt;
 	margin-top: 20px;
 	display: block;
 	border: 1px none #000000;
-	height: 75px;
+	height: 45px;
 }
 #progress ul {
 	list-style: none;
+    padding-left: 0px;
 	
 }
 
 #progress ul li {
 	display: inline;
-	padding-left: 20px;
+	padding-left: 0px;
 }
 
 .circle {
@@ -34,7 +35,7 @@ body {
 	border-radius: 10px;
 	text-align: center;
 	display: inline-block;
-	margin-right: 10px;
+	margin-right: 5px;
     font-size: 10pt;
 	
 }

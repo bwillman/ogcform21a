@@ -1,0 +1,40 @@
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21aReference
+
+@{
+    Layout = null;
+}
+
+	  	<div class="collection_box">
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<h4>Reference #x</h4>	
+	  			</div>
+	  		</div>
+	  		<div class="row">
+		  		<div class="col-md-4">
+		  			<label>Name</label>
+	  				@Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Name)
+		  			<label>Address</label>
+	  				@Html.TextAreaFor(model => model.Address, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Address)
+	  						  			
+	
+		  		</div>
+		  		<div class="col-md-4">	
+					<label>Phone No. (with area code)</label>		
+                    @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PhoneNo)
+
+					<label>Position Title</label>		
+                    @Html.TextBoxFor(model => model.Relationship, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Relationship)
+		  		</div>		 
+
+	  			
+	  		</div>
+
+	  			
+	  	</div>
+
+    

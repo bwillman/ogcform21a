@@ -93,7 +93,9 @@ namespace Gov.Dva.Ogc.Accreditation.Web.Mvc.Controllers
             var referenceList = new List<WebForm21aReference>();
             referenceList.Add(new WebForm21aReference());
             referenceList.Add(new WebForm21aReference());
-            newForm.WebForm = referenceList;
+            referenceList.Add(new WebForm21aReference());
+            newForm.WebForm21aReference = referenceList;
+            
 
 
             //ViewBag.Form21aID = new SelectList(db.WebForm21aServiceBranch, "Form21aID", "OtherService");
@@ -111,7 +113,28 @@ namespace Gov.Dva.Ogc.Accreditation.Web.Mvc.Controllers
             {
                 webform21a.Form21aID = Guid.NewGuid();
                 db.WebForm21a.Add(webform21a);
-                db.SaveChanges();
+                try {
+                    db.SaveChanges();
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException e) {
+                    var outputLines = new List<string>();
+                    foreach (var eve in e.EntityValidationErrors)
+                    {
+                        outputLines.Add(string.Format(
+                            "{0}: Entity of type \"{1}\" in state \"{2}\" has the following validation errors:",
+                            DateTime.Now, eve.Entry.Entity.GetType().Name, eve.Entry.State));
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            outputLines.Add(string.Format(
+                                "- Property: \"{0}\", Error: \"{1}\"",
+                                ve.PropertyName, ve.ErrorMessage));
+                        }
+                    }
+                    System.IO.File.AppendAllLines(@"c:\temp\errors.txt", outputLines);
+                    throw;
+                }
+
+
                 return RedirectToAction("Index");
             }
 

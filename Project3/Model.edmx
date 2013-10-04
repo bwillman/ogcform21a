@@ -4,24 +4,24 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBSchemaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DBSchemaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="DBSchemaModelStoreContainer">
-          <EntitySet Name="WebAccount" EntityType="DBSchemaModel.Store.WebAccount" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21" EntityType="DBSchemaModel.Store.WebForm21" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21a" EntityType="DBSchemaModel.Store.WebForm21a" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21aBarMembership" EntityType="DBSchemaModel.Store.WebForm21aBarMembership" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21aDischargeType" EntityType="DBSchemaModel.Store.WebForm21aDischargeType" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21aEducation" EntityType="DBSchemaModel.Store.WebForm21aEducation" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21aEmployer" EntityType="DBSchemaModel.Store.WebForm21aEmployer" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21aPracticeMembership" EntityType="DBSchemaModel.Store.WebForm21aPracticeMembership" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21aReference" EntityType="DBSchemaModel.Store.WebForm21aReference" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21aServiceBranch" EntityType="DBSchemaModel.Store.WebForm21aServiceBranch" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21aServiceDate" EntityType="DBSchemaModel.Store.WebForm21aServiceDate" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21DischargeType" EntityType="DBSchemaModel.Store.WebForm21DischargeType" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21OtherAccred" EntityType="DBSchemaModel.Store.WebForm21OtherAccred" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21Qualification" EntityType="DBSchemaModel.Store.WebForm21Qualification" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21ServiceBranch" EntityType="DBSchemaModel.Store.WebForm21ServiceBranch" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WebForm21ServiceDate" EntityType="DBSchemaModel.Store.WebForm21ServiceDate" store:Type="Tables" Schema="Accreditation" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="WebAccount" EntityType="DBSchemaModel.Store.WebAccount" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21" EntityType="DBSchemaModel.Store.WebForm21" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21a" EntityType="DBSchemaModel.Store.WebForm21a" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21aBarMembership" EntityType="DBSchemaModel.Store.WebForm21aBarMembership" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21aDischargeType" EntityType="DBSchemaModel.Store.WebForm21aDischargeType" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21aEducation" EntityType="DBSchemaModel.Store.WebForm21aEducation" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21aEmployer" EntityType="DBSchemaModel.Store.WebForm21aEmployer" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21aPracticeMembership" EntityType="DBSchemaModel.Store.WebForm21aPracticeMembership" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21aReference" EntityType="DBSchemaModel.Store.WebForm21aReference" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21aServiceBranch" EntityType="DBSchemaModel.Store.WebForm21aServiceBranch" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21aServiceDate" EntityType="DBSchemaModel.Store.WebForm21aServiceDate" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21DischargeType" EntityType="DBSchemaModel.Store.WebForm21DischargeType" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21OtherAccred" EntityType="DBSchemaModel.Store.WebForm21OtherAccred" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21Qualification" EntityType="DBSchemaModel.Store.WebForm21Qualification" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21ServiceBranch" EntityType="DBSchemaModel.Store.WebForm21ServiceBranch" store:Type="Tables" Schema="Accreditation" />
+          <EntitySet Name="WebForm21ServiceDate" EntityType="DBSchemaModel.Store.WebForm21ServiceDate" store:Type="Tables" Schema="Accreditation" />
           <AssociationSet Name="FK_tForm21aBranch_tForm21a" Association="DBSchemaModel.Store.FK_tForm21aBranch_tForm21a">
             <End Role="WebForm21a" EntitySet="WebForm21a" />
             <End Role="WebForm21aServiceBranch" EntitySet="WebForm21aServiceBranch" />
@@ -232,7 +232,7 @@
           <Property Name="IsCoastGuard" Type="bit" />
           <Property Name="IsNonVeteran" Type="bit" />
           <Property Name="IsOther" Type="bit" />
-          <Property Name="OtherService" Type="nvarchar" Nullable="false" MaxLength="35" />
+          <Property Name="OtherService" Type="nvarchar" Nullable="true" MaxLength="35" />
         </EntityType>
         <EntityType Name="WebForm21aServiceDate">
           <Key>
@@ -434,8 +434,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBSchemaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
@@ -503,6 +502,10 @@
           <AssociationSet Name="FK_WebForm21aPracticeMembership_WebForm21a" Association="DBSchemaModel.FK_WebForm21aPracticeMembership_WebForm21a">
             <End Role="WebForm21a" EntitySet="WebForm21a" />
             <End Role="WebForm21aPracticeMembership" EntitySet="WebForm21aPracticeMembership" />
+          </AssociationSet>
+          <AssociationSet Name="WebForm21aWebForm21aReference" Association="DBSchemaModel.WebForm21aWebForm21aReference">
+            <End Role="WebForm21a" EntitySet="WebForm21a" />
+            <End Role="WebForm21aReference" EntitySet="WebForm21aReference" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="WebAccount">
@@ -601,6 +604,7 @@
           <NavigationProperty Name="WebForm21aEducation" Relationship="DBSchemaModel.FK_WebForm21aEducation_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aEducation" />
           <NavigationProperty Name="WebForm21aEmployer" Relationship="DBSchemaModel.FK_WebForm21aEmployer_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aEmployer" />
           <NavigationProperty Name="WebForm21aPracticeMembership" Relationship="DBSchemaModel.FK_WebForm21aPracticeMembership_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aPracticeMembership" />
+          <NavigationProperty Name="WebForm21aReference" Relationship="DBSchemaModel.WebForm21aWebForm21aReference" FromRole="WebForm21a" ToRole="WebForm21aReference" />
         </EntityType>
         <EntityType Name="WebForm21aBarMembership">
           <Key>
@@ -670,6 +674,9 @@
           <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
           <Property Name="PhoneNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
           <Property Name="Relationship" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Type="Guid" Name="WebForm21aForm21aID" Nullable="false" />
+          <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.WebForm21aWebForm21aReference" FromRole="WebForm21aReference" ToRole="WebForm21a" />
+          <Property Type="Guid" Name="WebForm21aForm21aID1" Nullable="false" />
         </EntityType>
         <EntityType Name="WebForm21aServiceBranch">
           <Key>
@@ -683,7 +690,7 @@
           <Property Name="IsCoastGuard" Type="Boolean" />
           <Property Name="IsNonVeteran" Type="Boolean" />
           <Property Name="IsOther" Type="Boolean" />
-          <Property Name="OtherService" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
+          <Property Name="OtherService" Type="String" Nullable="true" MaxLength="35" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_tForm21aBranch_tForm21a" FromRole="WebForm21aServiceBranch" ToRole="WebForm21a" />
         </EntityType>
         <EntityType Name="WebForm21aServiceDate">
@@ -889,6 +896,18 @@
             </Principal>
             <Dependent Role="WebForm21aPracticeMembership">
               <PropertyRef Name="Form21aID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WebForm21aWebForm21aReference">
+          <End Type="DBSchemaModel.WebForm21a" Role="WebForm21a" Multiplicity="1" />
+          <End Type="DBSchemaModel.WebForm21aReference" Role="WebForm21aReference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebForm21a">
+              <PropertyRef Name="Form21aID" />
+            </Principal>
+            <Dependent Role="WebForm21aReference">
+              <PropertyRef Name="WebForm21aForm21aID1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

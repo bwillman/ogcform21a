@@ -7,7 +7,7 @@
 	[IsCoastGuard] [bit] NULL,
 	[IsNonVeteran] [bit] NULL,
 	[IsOther] [bit] NULL,
-	[OtherService] [nvarchar](35) NOT NULL,
+	[OtherService] [nvarchar](35) NULL,
  CONSTRAINT [PK_tForm21aBranch] PRIMARY KEY CLUSTERED 
 (
 	[Form21aID] ASC

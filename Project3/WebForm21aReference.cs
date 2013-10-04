@@ -20,5 +20,9 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web
         public string Address { get; set; }
         public string PhoneNo { get; set; }
         public string Relationship { get; set; }
+        public System.Guid WebForm21aForm21aID { get; set; }
+        public System.Guid WebForm21aForm21aID1 { get; set; }
+    
+        public virtual WebForm21a WebForm21a { get; set; }
     }
 }

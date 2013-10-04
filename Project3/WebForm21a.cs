@@ -22,6 +22,7 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web
             this.WebForm21aEducation = new HashSet<WebForm21aEducation>();
             this.WebForm21aEmployer = new HashSet<WebForm21aEmployer>();
             this.WebForm21aPracticeMembership = new HashSet<WebForm21aPracticeMembership>();
+            this.WebForm21aReference = new HashSet<WebForm21aReference>();
         }
     
         public System.Guid Form21aID { get; set; }
@@ -72,5 +73,6 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web
         public virtual ICollection<WebForm21aEducation> WebForm21aEducation { get; set; }
         public virtual ICollection<WebForm21aEmployer> WebForm21aEmployer { get; set; }
         public virtual ICollection<WebForm21aPracticeMembership> WebForm21aPracticeMembership { get; set; }
+        public virtual ICollection<WebForm21aReference> WebForm21aReference { get; set; }
     }
 }

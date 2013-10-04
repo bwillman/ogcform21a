@@ -188,6 +188,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201310031634499_AddWebForm21aReferenceAssociation.cs" />
+    <Compile Include="Migrations\201310031634499_AddWebForm21aReferenceAssociation.Designer.cs">
+      <DependentUpon>201310031634499_AddWebForm21aReferenceAssociation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -301,6 +306,7 @@
     <Content Include="Views\WebForm21a\EditorTemplates\WebForm21aEducation.cshtml" />
     <Content Include="Views\WebForm21a\EditorTemplates\WebForm21aBarMembership.cshtml" />
     <Content Include="Views\WebForm21a\EditorTemplates\WebForm21aPracticeMembership.cshtml" />
+    <Content Include="Views\WebForm21a\EditorTemplates\WebForm21aReference.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,6 +319,11 @@
       <Project>{a7fd6bb1-0d7c-456f-8bbf-494de447999a}</Project>
       <Name>Gov.Dva.Ogc.Data.Accreditation.Web.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201310031634499_AddWebForm21aReferenceAssociation.resx">
+      <DependentUpon>201310031634499_AddWebForm21aReferenceAssociation.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

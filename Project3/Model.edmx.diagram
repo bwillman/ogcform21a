@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ffe78598bff04c04ab3225c571e5802e" Name="Diagram1">
+      <Diagram DiagramId="ffe78598bff04c04ab3225c571e5802e" Name="Diagram1" ZoomLevel="66">
         <EntityTypeShape EntityType="DBSchemaModel.WebAccount" Width="2.875" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21a" Width="2.125" PointX="0.75" PointY="7.125" IsExpanded="true" />
@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21aEducation" Width="2.375" PointX="3.25" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21aEmployer" Width="2.5" PointX="3.25" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21aPracticeMembership" Width="2.625" PointX="3.25" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBSchemaModel.WebForm21aReference" Width="2.125" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSchemaModel.WebForm21aReference" Width="2.125" PointX="6.375" PointY="16.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21aServiceBranch" Width="2.5" PointX="3" PointY="17" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21aServiceDate" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21DischargeType" Width="2.375" PointX="8" PointY="1.5" IsExpanded="true" />
@@ -33,6 +33,7 @@
         <AssociationConnector Association="DBSchemaModel.FK_WebForm21aEducation_WebForm21a" ManuallyRouted="false" />
         <AssociationConnector Association="DBSchemaModel.FK_WebForm21aEmployer_WebForm21a" ManuallyRouted="false" />
         <AssociationConnector Association="DBSchemaModel.FK_WebForm21aPracticeMembership_WebForm21a" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSchemaModel.WebForm21aWebForm21aReference" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
