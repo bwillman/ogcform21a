@@ -1,0 +1,166 @@
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21a
+
+        <div class="field_section" id="section_2">
+	  	<h3>
+	  		My Information
+	  	</h3>
+
+            <div class="form_grouping">
+
+
+			    <div class="row">
+			  	    <div class="col-md-4 form-group">
+                        <label>First Name</label>	
+		
+                        @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.FirstName)
+				
+			  	    </div>
+			  	    <div class="col-md-4 form-group">
+					    <label>Middle Name</label>
+		
+                        @Html.TextBoxFor(model => model.MiddleName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MiddleName)		  		
+			  	    </div>	
+			  	    <div class="col-md-4 form-group">
+                        <label>Last Name</label>
+
+                        @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.LastName)			  		
+			  	    </div>	
+			    </div>
+
+			    <div class="row">
+				    <div class="col-md-6">
+					    <div class="form-group">
+                            <label>Home Address</label>
+                            @Html.TextBoxFor(model => model.HomeAddress1, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.HomeAddress1)
+					    </div>		
+					    <div class="form-group">
+						    <label class="sr-only">Home Address 2</label>
+                            @Html.TextBoxFor(model => model.HomeAddress2, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.HomeAddress2)
+					    </div>		
+					    <div class="row">
+						    <div class="form-group col-md-6">
+							    <label>State</label>
+                                @Html.TextBoxFor(model => model.HomeState, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.HomeState)
+						    </div>		
+						    <div class="form-group  col-md-6">
+							    <label>Zip</label>
+                                @Html.TextBoxFor(model => model.HomeZip, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.HomeZip)
+						    </div>		
+						
+					    </div>
+				    </div>
+				    <div class="col-md-6">
+					    <div class="form-group">
+						    <label>Phone Number</label><span class="question_small_text"> (including area code)</span>
+                            @Html.TextBoxFor(model => model.HomePhoneNo, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.HomePhoneNo)
+
+					
+					    </div>						
+					
+					    <div class="form-group">
+						    <label>Email Address (if available)</label>
+                            @Html.TextBoxFor(model => model.HomeEmailAddr, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.HomeEmailAddr)
+					    </div>						
+				    </div>
+				
+			    </div>
+
+
+			    <div class="row">
+				    <div class="col-md-4 form-group">
+					    <label>Date of Birth (month, day, year)</label>
+                        @Html.TextBoxFor(model => model.BirthDate, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.BirthDate)
+				    </div>		
+												
+				    <div class="col-md-8 form-group">
+					    <label>Place of Birth(City, State, County)</label>
+					    @Html.TextBoxFor(model => model.BirthLocation, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.BirthLocation)
+				    </div>					
+			    </div>
+            </div>    
+			
+            <div class="form_grouping">
+                <div class="row">
+                    <div class="col-md-5">
+                        <label><span class="question_number">3A.</span> Employment Status</label>
+                        <div id="employment_status">
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus0" value="0" />EMPLOYED   <span class="question_small_text">(complete item 3B)</span>
+                            </div>
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus1" value="1" />UNEMPLOYED   <span class="question_small_text">(skip item 3B)</span>
+                            </div>
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus2" value="2" />SELF-EMPLOYED   <span class="question_small_text">(skip item 3B)</span>
+                            </div>
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus3" value="3" />STUDENT   <span class="question_small_text">(skip item 3B)</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-7">
+                        <label><span class="question_number">3B.</span> Work Address</label> 
+					    <div class="form-group">
+                            @Html.TextBoxFor(model => model.WorkAddress1, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.WorkAddress1)
+					    </div>		
+					    <div class="form-group">
+
+                            @Html.TextBoxFor(model => model.WorkAddress2, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.WorkAddress2)
+					    </div>		
+					    <div class="row">
+						    <div class="form-group col-md-6">
+							    <label>State</label>
+                                @Html.TextBoxFor(model => model.WorkState, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.WorkState)
+						    </div>		
+						    <div class="form-group  col-md-6">
+							    <label>Zip</label>
+                                @Html.TextBoxFor(model => model.WorkZip, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.WorkZip)
+						    </div>		
+						
+					    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form_grouping">
+			    <div class="row">
+				    <div class="col-md-4 form-group">
+					    <label>List Dates of all active military service</label>
+                        @Html.EditorFor(model => model.WebForm21aServiceDate)
+									
+				    </div>	
+                    <div class="col-md-8 form-group">
+                        <label>Branch of Service</label>
+                        @Html.EditorFor(model => model.WebForm21aServiceBranch)
+                    
+                        @Html.ValidationMessageFor(model => model.WebForm21aServiceBranch)
+
+                    </div>
+			    </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                        <button type="button" class="btn btn-default btn-lg" onclick="navigation_click(2)">Previous</button>
+
+                        <button type="button" class="btn btn-primary btn-lg" onclick="navigation_click(3)">Next</button>
+                </div>
+            </div>
+
+	  	</div>

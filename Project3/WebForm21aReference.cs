@@ -11,11 +11,13 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class WebForm21aReference
     {
         public System.Guid ID { get; set; }
         public System.Guid Form21aID { get; set; }
+        [Required]
         public string Name { get; set; }
         public string Address { get; set; }
         public string PhoneNo { get; set; }

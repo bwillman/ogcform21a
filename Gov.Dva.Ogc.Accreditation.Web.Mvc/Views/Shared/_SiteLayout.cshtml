@@ -6,9 +6,8 @@
     <title>@ViewBag.Title</title>
   	<link rel="stylesheet" type="text/css" href="~/Content/form21.css">
   	<link rel="stylesheet" href="~/Content/bootstrap/bootstrap.css">
-    <script src="~/Scripts/jquery-1.8.2.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<!--     <script src="~/Scripts/jquery-1.8.2.js"></script>-->
+
 
   	<script src="~/Content/bootstrap/bootstrap.js"></script>
 
@@ -17,13 +16,24 @@
 
 
       	    var navigation_click = function (step) {
-      	        //step is 1 through 5
+      	        //step is 1 through 7
+      	        console.log("begin step: " + step);
       	        $(".circle").css("background-color", "");
       	        $(".field_section").css("display", "none");
-      	        $("#step_" + step).css("background-color", "#ab9931");
-      	        //$("#section_" + step).css("display", "block");
       	        $("#section_" + step).fadeIn();
       	        window.scrollTo(0, 0);
+
+      	        for (var i = 1; i < step; i++) {
+      	            $(".step_" + i).removeClass("previous next current").addClass("previous");
+      	        }
+      	        for (var i = (step + 1); i <= 7; i++) {
+      	            $(".step_" + i).removeClass("previous next current").addClass("next");
+      	        }
+      	        $(".step_" + step).removeClass("previous next");
+      	        $(".step_" + step).addClass("current");
+      	        console.log("end step: " + step);
+
+                
 
       	    }
 
@@ -79,5 +89,8 @@
         </div>
 
     </div>
+    @Scripts.Render("~/bundles/jquery")
+   @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts",false)
 </body>
 </html>

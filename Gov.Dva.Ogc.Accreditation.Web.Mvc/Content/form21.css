@@ -4,6 +4,127 @@ body {
 	font-family: arial;
 }
 
+#accred_heading h2 {
+    font-family: Georgia,"Times New Roman",Times,serif;
+    color: #003F72;
+    font-size: 1.55em;
+    font-weight: 400;
+    line-height: 1.75;
+    padding-bottom: 6px;
+
+
+}
+
+/******** Chevrons *****************/
+
+div#container {
+    background: #ccaab8;
+    height: 500px;
+    padding: 20px;
+    width: 100%;
+
+}
+
+div.chevron {
+    width: 120px;
+    height: 45px;
+    display: inline-block;
+    color: white;
+    font-family: arial;
+    position: relative;
+}
+
+div.chevron.not_first {
+
+}
+
+div.chevron.step_1 {
+    left: 0px;
+}
+
+div.chevron.step_2 {
+    left: -22px;
+}
+
+div.chevron.step_3 {
+    left: -44px;
+}
+
+div.chevron.step_4 {
+    left: -66px;
+}
+
+div.chevron.step_5 {
+    left: -88px;
+}
+div.chevron.step_6 {
+    left: -110px;
+}
+div.chevron.step_7 {
+    left: -132px;
+}
+
+div.chevron .text {
+
+    display: block;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 10pt;
+}
+div.chevron.previous{
+    background-color: white;    
+    background-image:
+
+        linear-gradient(-45deg, white 18px, transparent 18px),
+        linear-gradient(-135deg, white 18px, transparent 18px),
+        linear-gradient(-45deg, #99A2B7 85px, transparent 85px),
+        linear-gradient(-135deg, #99A2B7 85px, transparent 85px),     
+        linear-gradient(-45deg, white 120px, transparent 120px),
+        linear-gradient(-135deg, white 120px, transparent 120px);     
+    
+    border: 1px solid #cba947;
+    z-index: 15;
+}
+
+div.chevron.current{
+    /*background-color: #2396D3;*/
+    background-color: transparent;
+    background-image:
+
+        linear-gradient(-45deg, white 18px, transparent 18px),
+        linear-gradient(-135deg, white 18px, transparent 18px),
+        linear-gradient(-45deg, #2396D3 85px, transparent 85px),
+        linear-gradient(-135deg, #2396D3 85px, transparent 85px),     
+        linear-gradient(-45deg, transparent 120px, transparent 120px),
+        linear-gradient(-135deg, transparent 120px, transparent 120px); 
+    border: 1px solid #cba947;
+    z-index: 20;
+}
+
+div.chevron.next{
+    /*background-color: #2396D3;*/
+    background-color: transparent;
+    background-image:
+
+        linear-gradient(-45deg, white 18px, transparent 18px),
+        linear-gradient(-135deg, white 18px, transparent 18px),
+        linear-gradient(-45deg, #9CCBE4 85px, transparent 85px),
+        linear-gradient(-135deg, #9CCBE4 85px, transparent 85px),     
+        linear-gradient(-45deg, transparent 120px, transparent 120px),
+        linear-gradient(-135deg, transparent 120px, transparent 120px); 
+    border: 1px solid #cba947;
+    z-index: 20;
+}
+
+div#progress_menu {
+    width: 1000px;
+    margin-bottom: 20px;
+}
+
+#progress_menu a {
+    text-decoration: none;
+}
+/************* Other stuff **************/
 .instructions {
 	font-size: 10pt;	
 	margin-bottom: 15px;
@@ -115,4 +236,14 @@ body {
 #section_6 .row {
     border-bottom: 1px solid #cccccc;
     padding-bottom: 5px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
 }
