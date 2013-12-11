@@ -308,6 +308,7 @@
     <Content Include="Views\WebForm21a\EditorTemplates\WebForm21aPracticeMembership.cshtml" />
     <Content Include="Views\WebForm21a\EditorTemplates\WebForm21aReference.cshtml" />
     <Content Include="Views\WebForm21a\_chevronMenu.cshtml" />
+    <Content Include="Views\WebForm21a\_MyInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

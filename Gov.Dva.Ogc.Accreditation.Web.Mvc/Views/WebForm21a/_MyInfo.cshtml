@@ -5,9 +5,64 @@
 	  		My Information
 	  	</h3>
 
-            <div class="form_grouping">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Name</label><span class="required">*</span>
+                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FirstName)
+                <div class="sublabel">First Name</div>
+
+            </div>
+            <div class="col-md-6">
+                <label>Phone</label><span class="required">*</span>
+                <div>@Html.TextBoxFor(model => model.HomePhoneNo, new { @class = "form-control" })</div>
+                @Html.ValidationMessageFor(model => model.HomePhoneNo)
+                <div class="sublabel">Area Code
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+                <div>@Html.TextBoxFor(model => model.MiddleName, new { @class = "form-control"})</div>
+                <div class="sublabel">Middle Name</div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+                <div>@Html.TextBoxFor(model => model.LastName, new { @class = "form-control"})</div>
+                <div class="sublabel">Last Name</div>
+            </div>
+            <div class="col-md-6">
+                <label>Email Address</label>
+                <div>@Html.TextBoxFor( model => model.HomeEmailAddr, new { @class = "form-control" })</div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Home Address</label><span class="required">*</span>
+                <div>@Html.TextBoxFor( model => model.HomeAddress1, new { @class = "form-control" })</div>
+                <div class="sublabel">Street Address</div>
+            </div>
+            <div class="col-md-6">
+                <label>Date of Birth</label><span class="required">*</span>
+                <div>@Html.TextBoxFor( model => model.BirthDate, new { @class = "form-control" })</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div>@Html.TextBoxFor( model => model.HomeAddress2, new { @class = "form-control" })</div>
+                 
+            </div>
+        </div>
+        
 
 
+
+<!-- 
 			    <div class="row">
 			  	    <div class="col-md-4 form-group">
                         <label>First Name</label>	
@@ -161,6 +216,8 @@
 
                         <button type="button" class="btn btn-primary btn-lg" onclick="navigation_click(3)">Next</button>
                 </div>
-            </div>
+            -->
+ 
+
 
 	  	</div>
