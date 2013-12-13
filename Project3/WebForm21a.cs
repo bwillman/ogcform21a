@@ -65,6 +65,7 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web
         public string ExplainLimitation { get; set; }
         public Nullable<System.DateTime> DateEntered { get; set; }
         public Nullable<bool> IsProcessed { get; set; }
+        public string HomeCity { get; set; }
     
         public virtual WebForm21aServiceBranch WebForm21aServiceBranch { get; set; }
         public virtual ICollection<WebForm21aDischargeType> WebForm21aDischargeType { get; set; }

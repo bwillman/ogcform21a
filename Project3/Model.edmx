@@ -122,6 +122,7 @@
           <Property Name="HomeAddress1" Type="nvarchar" MaxLength="200" />
           <Property Name="HomeAddress2" Type="nvarchar" MaxLength="200" />
           <Property Name="HomeState" Type="nchar" MaxLength="2" />
+          <Property Name="HomeCity" Type="nvarchar" MaxLength="200" />
           <Property Name="HomeZip" Type="nchar" MaxLength="10" />
           <Property Name="HomePhoneNo" Type="nvarchar" MaxLength="20" />
           <Property Name="HomeEmailAddr" Type="nvarchar" MaxLength="100" />
@@ -232,7 +233,7 @@
           <Property Name="IsCoastGuard" Type="bit" />
           <Property Name="IsNonVeteran" Type="bit" />
           <Property Name="IsOther" Type="bit" />
-          <Property Name="OtherService" Type="nvarchar" Nullable="true" MaxLength="35" />
+          <Property Name="OtherService" Type="nvarchar" MaxLength="35" />
         </EntityType>
         <EntityType Name="WebForm21aServiceDate">
           <Key>
@@ -565,6 +566,7 @@
           <Property Name="HomeAddress2" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
           <Property Name="HomeState" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
           <Property Name="HomeZip" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="HomeCity" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />          
           <Property Name="HomePhoneNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
           <Property Name="HomeEmailAddr" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
           <Property Name="EmploymentStatus" Type="Int32" />
@@ -605,6 +607,7 @@
           <NavigationProperty Name="WebForm21aEmployer" Relationship="DBSchemaModel.FK_WebForm21aEmployer_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aEmployer" />
           <NavigationProperty Name="WebForm21aPracticeMembership" Relationship="DBSchemaModel.FK_WebForm21aPracticeMembership_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aPracticeMembership" />
           <NavigationProperty Name="WebForm21aReference" Relationship="DBSchemaModel.WebForm21aWebForm21aReference" FromRole="WebForm21a" ToRole="WebForm21aReference" />
+
         </EntityType>
         <EntityType Name="WebForm21aBarMembership">
           <Key>
@@ -690,7 +693,7 @@
           <Property Name="IsCoastGuard" Type="Boolean" />
           <Property Name="IsNonVeteran" Type="Boolean" />
           <Property Name="IsOther" Type="Boolean" />
-          <Property Name="OtherService" Type="String" Nullable="true" MaxLength="35" Unicode="true" FixedLength="false" />
+          <Property Name="OtherService" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_tForm21aBranch_tForm21a" FromRole="WebForm21aServiceBranch" ToRole="WebForm21a" />
         </EntityType>
         <EntityType Name="WebForm21aServiceDate">
@@ -962,6 +965,7 @@
           <EntitySetMapping Name="WebForm21a">
             <EntityTypeMapping TypeName="DBSchemaModel.WebForm21a">
               <MappingFragment StoreEntitySet="WebForm21a">
+                <ScalarProperty Name="HomeCity" ColumnName="HomeCity" />
                 <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />

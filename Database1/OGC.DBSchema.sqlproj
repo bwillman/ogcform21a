@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <TargetDatabase>DBSchema</TargetDatabase>
+    <GenerateCreateScript>False</GenerateCreateScript>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>

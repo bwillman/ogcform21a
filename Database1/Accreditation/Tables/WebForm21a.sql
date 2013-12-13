@@ -1,11 +1,12 @@
 ﻿CREATE TABLE [Accreditation].[WebForm21a](
 	[Form21aID] [uniqueidentifier] NOT NULL,
 	[FirstName] [nvarchar](150) NULL,
-	[MiddleName] [nvarchar](150) NULL,
+	[MiddleName] [nvarchar](150) NULL,	
 	[LastName] [nvarchar](150) NULL,
 	[HomeAddress1] [nvarchar](200) NULL,
 	[HomeAddress2] [nvarchar](200) NULL,
 	[HomeState] [nchar](2) NULL,
+	[HomeCity] [nvarchar](200) NULL,
 	[HomeZip] [nchar](10) NULL,
 	[HomePhoneNo] [nvarchar](20) NULL,
 	[HomeEmailAddr] [nvarchar](100) NULL,

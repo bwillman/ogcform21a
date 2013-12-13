@@ -1,6 +1,7 @@
 ﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21a
 
         <div class="field_section" id="section_2">
+
 	  	<h3>
 	  		My Information
 	  	</h3>
@@ -42,6 +43,7 @@
             </div>
         </div>
         <div class="row">
+            <div>&nbsp</div>
             <div class="col-md-6">
                 <label>Home Address</label><span class="required">*</span>
                 <div>@Html.TextBoxFor( model => model.HomeAddress1, new { @class = "form-control" })</div>
@@ -55,10 +57,20 @@
         <div class="row">
             <div class="col-md-6">
                 <div>@Html.TextBoxFor( model => model.HomeAddress2, new { @class = "form-control" })</div>
-                 
+                <div class="sublabel">&nbsp</div>
+               
+                <div>@Html.TextBoxFor( model => model.HomeCity, new { @class = "form-control" })</div>
+                <div class="sublabel">City</div>
             </div>
-        </div>
-        
+            <div class="col-md-6">
+                <label>Place of Birth</label><span class="required">*</span>
+                <div>@Html.TextBoxFor( model => model.BirthLocation, new { @class = "form-control" })</div>
+                <div class="sublabel">Birth City, County and State</div>
+               
+
+
+            </div>
+        </div>        
 
 
 
@@ -210,14 +222,14 @@
 			    </div>
 
             </div>
+            -->
             <div class="row">
                 <div class="col-md-12" style="text-align: center">
                         <button type="button" class="btn btn-default btn-lg" onclick="navigation_click(2)">Previous</button>
 
                         <button type="button" class="btn btn-primary btn-lg" onclick="navigation_click(3)">Next</button>
                 </div>
-            -->
- 
 
+ 	  	    </div>
 
-	  	</div>
+        </div>
