@@ -319,6 +319,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{b7d82d62-859b-43a1-819c-d7fa2011767b}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Project3\Gov.Dva.Ogc.Data.Accreditation.Web.Entity.csproj">
       <Project>{a7fd6bb1-0d7c-456f-8bbf-494de447999a}</Project>
       <Name>Gov.Dva.Ogc.Data.Accreditation.Web.Entity</Name>

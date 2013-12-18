@@ -6,24 +6,23 @@
 //    Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System.ComponentModel.DataAnnotations;
 
-namespace Gov.Dva.Ogc.Data.Accreditation.Web
+namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class WebForm21aReference
+    public partial class WebForm21aEmployer
     {
         public System.Guid ID { get; set; }
         public System.Guid Form21aID { get; set; }
-        [Required]
         public string Name { get; set; }
         public string Address { get; set; }
         public string PhoneNo { get; set; }
-        public string Relationship { get; set; }
-        public System.Guid WebForm21aForm21aID { get; set; }
-        public System.Guid WebForm21aForm21aID1 { get; set; }
+        public string PositionTitle { get; set; }
+        public Nullable<System.DateTime> DateRangeEmpBegin { get; set; }
+        public Nullable<System.DateTime> DateRangeEmpEnd { get; set; }
+        public string Supervisor { get; set; }
     
         public virtual WebForm21a WebForm21a { get; set; }
     }

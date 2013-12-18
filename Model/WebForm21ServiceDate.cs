@@ -7,19 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Gov.Dva.Ogc.Data.Accreditation.Web
+namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class WebForm21aPracticeMembership
+    public partial class WebForm21ServiceDate
     {
         public System.Guid ID { get; set; }
-        public System.Guid Form21aID { get; set; }
-        public string Agency { get; set; }
-        public Nullable<System.DateTime> AdmissionDate { get; set; }
-        public string MembershipNo { get; set; }
+        public System.Guid Form21ID { get; set; }
+        public System.DateTime ActiveServiceDate { get; set; }
     
-        public virtual WebForm21a WebForm21a { get; set; }
+        public virtual WebForm21 WebForm21 { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Gov.Dva.Ogc.Data.Accreditation.Web;
+using Gov.Dva.Ogc.Data.Accreditation.Web.Model;
 
 namespace Gov.Dva.Ogc.Accreditation.Web.Mvc.Controllers
 {

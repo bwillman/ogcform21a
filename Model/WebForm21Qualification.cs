@@ -7,20 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Gov.Dva.Ogc.Data.Accreditation.Web
+namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class WebForm21aEducation
+    public partial class WebForm21Qualification
     {
         public System.Guid ID { get; set; }
-        public System.Guid Form21aID { get; set; }
-        public string Institution { get; set; }
-        public string Address { get; set; }
-        public string DatesAttended { get; set; }
-        public string DegreeRecived { get; set; }
+        public Nullable<System.Guid> Form21ID { get; set; }
+        public Nullable<bool> HasCompletedCourse { get; set; }
+        public Nullable<bool> HasPassedExam { get; set; }
+        public Nullable<bool> HasExperience { get; set; }
     
-        public virtual WebForm21a WebForm21a { get; set; }
+        public virtual WebForm21 WebForm21 { get; set; }
     }
 }

@@ -7,16 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Gov.Dva.Ogc.Data.Accreditation.Web
+namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class WebForm21DischargeType
+    public partial class WebForm21ServiceBranch
     {
-        public System.Guid ID { get; set; }
         public System.Guid Form21ID { get; set; }
-        public string DischargeType { get; set; }
+        public Nullable<bool> IsArmy { get; set; }
+        public Nullable<bool> IsNavy { get; set; }
+        public Nullable<bool> IsAirForce { get; set; }
+        public Nullable<bool> IsMarines { get; set; }
+        public Nullable<bool> IsCoastGuard { get; set; }
+        public Nullable<bool> IsNonVeteran { get; set; }
+        public Nullable<bool> IsOther { get; set; }
+        public string OtherService { get; set; }
     
         public virtual WebForm21 WebForm21 { get; set; }
     }

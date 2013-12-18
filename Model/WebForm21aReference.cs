@@ -7,16 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Gov.Dva.Ogc.Data.Accreditation.Web
+namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class WebForm21aServiceDate
+    public partial class WebForm21aReference
     {
         public System.Guid ID { get; set; }
         public System.Guid Form21aID { get; set; }
-        public System.DateTime ActiveServiceDate { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string PhoneNo { get; set; }
+        public string Relationship { get; set; }
+        public System.Guid WebForm21aForm21aID { get; set; }
+        public System.Guid WebForm21aForm21aID1 { get; set; }
     
         public virtual WebForm21a WebForm21a { get; set; }
     }
