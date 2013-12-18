@@ -3,40 +3,43 @@
 @{
     Layout = null;
 }
-    ss
+    
 
         <div class="row"> 
-            <div class="col-md-2">
-                <div>
-                    Army
+
+                <div class="col-md-4 form-group">
+                    <div>
+                        Army
+                    </div>
+                    <div >
+                        @Html.EditorFor(model => model.IsArmy)                
+                        @Html.ValidationMessageFor(model => model.IsArmy)
+                    </div>
                 </div>
-                <div>
-                    @Html.EditorFor(model => model.IsArmy)                
-                    @Html.ValidationMessageFor(model => model.IsArmy)
-                </div>
-            </div>
     
-            <div class="col-md-2">
-                <div>
-                    Navy
+                <div class="col-md-4 form-group">
+                    <div>
+                        Navy
+                    </div>
+                    <div>
+                    @Html.EditorFor(model => model.IsNavy)
+                    @Html.ValidationMessageFor(model => model.IsNavy)
+                    </div>
                 </div>
-                <div>
-                @Html.EditorFor(model => model.IsNavy)
-                @Html.ValidationMessageFor(model => model.IsNavy)
-                </div>
-            </div>
     
-            <div class="col-md-3">
-                <div>
-                    Air Force
+                <div class="col-md-4 form-group">
+                    <div>
+                        Air Force
+                    </div>
+                    <div>
+                        @Html.EditorFor(model => model.IsAirForce)                
+                        @Html.ValidationMessageFor(model => model.IsAirForce)
+                    </div>
                 </div>
-                <div>
-                    @Html.EditorFor(model => model.IsAirForce)                
-                    @Html.ValidationMessageFor(model => model.IsAirForce)
-                </div>
-            </div>
-    
-            <div class="col-md-2">
+
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-group">
                 <div>
                     Marines
                 </div>
@@ -46,7 +49,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4 form-group">
                 <div>
                     Coast Guard
                 </div>
@@ -55,12 +58,7 @@
                     @Html.ValidationMessageFor(model => model.IsCoastGuard)
                 </div>
             </div>
-    
-
-        </div>
-        <div class="row">
-
-            <div class="col-md-2">
+            <div class="col-md-4 form-group">
                 <div>
                     Non-Veteran
                 </div>
@@ -68,9 +66,12 @@
                     @Html.EditorFor(model => model.IsNonVeteran)                
                     @Html.ValidationMessageFor(model => model.IsNonVeteran)
                 </div>
-            </div>
-    
-            <div class="col-md-2">
+            </div>    
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 form-group">
                 <div>
                     Other
                 </div>
@@ -79,7 +80,7 @@
                     @Html.ValidationMessageFor(model => model.IsOther)
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 form-group">
                 <div>
                     Other Service
                 </div>

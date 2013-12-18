@@ -167,12 +167,23 @@ div#progress_menu {
 }
 
 .collection_box {
-	border: solid 1px #000000;
+	border: none 1px #000000;
 	border-radius: 10px; 
-	padding: 20px;
+	padding: 0px;
 	margin-bottom: 20px;
 }
 
+.divider {
+    height: 2px;
+    width: 100%;
+    background-color: #cccccc;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.employer_title {
+    font-weight: bold; 
+}
 .field_description {
 	font-weight: bold;
 	display: inline-block;

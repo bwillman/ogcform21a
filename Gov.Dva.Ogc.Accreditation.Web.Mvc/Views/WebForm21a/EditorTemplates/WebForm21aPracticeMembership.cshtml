@@ -4,6 +4,16 @@
     Layout = null;
 }
  
+                @{ 
+                    String controlName = Html.NameFor(model => model.Agency).ToString();
+                    Int32 brackPos = controlName.IndexOf("[");
+                    Int32 pCount = Convert.ToInt32(controlName.Substring(brackPos + 1, 1)) + 1;
+                    }
+            <tr>
+                <td colspan="3" style="padding: 0px 0px 0px 10px">
+                    <div>Agency #@pCount.ToString()</div>
+                </td>
+            </tr>
 	  		<tr>
 	  			<td>
                 @Html.TextBoxFor(model => model.Agency, new { @class = "form-control" })

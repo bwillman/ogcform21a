@@ -6,6 +6,7 @@
 //    Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System.ComponentModel.DataAnnotations;
 
 namespace Gov.Dva.Ogc.Data.Accreditation.Web
 {
@@ -16,6 +17,7 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web
     {
         public System.Guid ID { get; set; }
         public System.Guid Form21aID { get; set; }
+        [Required]
         public string Name { get; set; }
         public string Address { get; set; }
         public string PhoneNo { get; set; }

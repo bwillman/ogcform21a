@@ -5,25 +5,12 @@
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
 
+
+
 <div id="accred_heading">
     <h2>Accreditation</h2>
 </div>
   	
-<!--
-<div id="progress">
-  
-    <ul>
-  		<li><a href="javascript: navigation_click(1)"><div class="circle" id="step_1">1</div></a>Start</li>
-  		<li><a href="javascript: navigation_click(2)"><div class="circle" id="step_2">2</div></a>My Info</li>
-  		<li><a href="javascript: navigation_click(3)"><div class="circle" id="step_3">3</div></a>Employment</li>
-  		<li><a href="javascript: navigation_click(4)"><div class="circle" id="step_4">4</div></a>Education</li>
-  		<li><a href="javascript: navigation_click(5)"><div class="circle" id="step_5">5</div></a>Legal</li>
-  		<li><a href="javascript: navigation_click(6)"><div class="circle" id="step_6">6</div></a>Background</li>
-  		<li><a href="javascript: navigation_click(7)"><div class="circle" id="step_7">7</div></a>References</li>
-  				
-  	</ul>
-</div>
-    -->
 
 <div>
     @Html.Partial("_chevronMenu")
@@ -51,29 +38,25 @@
     
         <!-- MyInfo -->
     
-        @Html.Partial("_MyInfo", new Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21a())
-	  	
+        @*
+        @Html.Partial("_MyInfo", new Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21a()) 
+    
+	  	*@
+    
+        @Html.Partial("_MyInfo", Model )     
+    
 	  	<!-- Employment -->
     
-
-	  	<div class="field_section" id="section_3" style="display:none">
-	  		<h3>Employment</h3>
-            @Html.EditorFor(model => model.WebForm21aEmployer)
-            <div class="row">
-                <div class="col-md-12" style="text-align: center">
-                        <button type="button" class="btn btn-default btn-lg" onclick="navigation_click(3)">Previous</button>
-
-                        <button type="button" class="btn btn-primary btn-lg" onclick="navigation_click(4)">Next</button>
-                </div>
-            </div>
-
-	  	</div>
+        @Html.Partial("_Employment", Model)
 
     
 	  	<!-- Education -->
 	  	<div class="field_section" id="section_4" style="display: none">
 
+
 	  		<h3>Education</h3>
+        
+
             @Html.EditorFor(model => model.WebForm21aEducation)
             <div class="row">
                 <div class="col-md-12" style="text-align: center">
@@ -87,94 +70,8 @@
 
     	  	
 	  	<!-- Legal -->
-	  	<div class="field_section" id="section_5"  style="display: none">
-	  		<h3>Legal</h3>
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">11A.</span> Are you currently a member in good standing of the bar of the highest court of a state or territory of the United States?</div>
-	  				<div style="display:inline-block; padding-top: 10px; margin-left: 20px">
-                    
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.IsBarMember, true)
 
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.IsBarMember, false, new {@checked = "checked" })                          
-	  				</div>
-	  				
-	  			</div>
-	  		</div>
-	  		<div class="row sub_question" id="jurisdiction_section" style="display: none">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<div class="question_number">11B.</div> If "Yes", list each jurisdiction in which admitted, the date of adminssion, and membership or registration number.
-	  				</div>
-	  				<table class="collection_table">
-	  					<tr>
-	  						<th style="width: 350px;">
-					  			Jurisdiction in which admitted			
-	  						</th>
-							<th>
-								Date of Admission
-							</th>
-							<th>
-								Membership or Registration No.
-							</th>
-	  						
-	  					</tr>
-                          @Html.EditorFor(model => Model.WebForm21aBarMembership)
-	  				</table>
-	  				
-	  			</div> 
-	  		</div>
-
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">12A.</span> Are you currently admitted to practice before any state or federal agency or any federal court?</div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.IsPracticing, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.IsPracticing, false, new {@checked = "checked" }) 
-	  				
-	  			</div>
-	  		</div>
-	  		<div class="row sub_question" id="practice_section" style="display: none">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<div class="question_number">12B.</div> If "Yes", list each agency or federal court to which admitted, the date of admission, and membership or registration number.
-	  				</div>
-	  				<table class="collection_table">
-	  					<tr>
-	  						<th style="width: 350px;">
-					  			Agency in which admitted		
-	  						</th>
-							<th>
-								Date of admission
-							</th>
-							<th>
-								Membership or Registration No.
-							</th>
-	  						
-	  					</tr>
-
-                        @Html.EditorFor(model => Model.WebForm21aPracticeMembership)
-	  				</table>
-	  				
-	  			</div> 
-	  		</div>
-            <div class="row">
-                <div class="col-md-12" style="text-align: center">
-                        <button type="button" class="btn btn-default btn-lg" onclick="navigation_click(5)">Previous</button>
-
-                        <button type="button" class="btn btn-primary btn-lg" onclick="navigation_click(6)">Next</button>
-                </div>
-            </div>
-
-	  		
-
-	  	</div>
+        @Html.Partial("_legal", Model)
 	  	
 		<!-- Background -->
 		<div class="field_section" id="section_6"  style="display: none">

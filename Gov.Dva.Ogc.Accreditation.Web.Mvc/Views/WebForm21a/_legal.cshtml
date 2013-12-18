@@ -1,0 +1,91 @@
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21a
+
+      	<div class="field_section" id="section_5"  style="display: none">
+	  		<h3>Legal</h3>
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">11A.</span> Are you currently a member in good standing of the bar of the highest court of a state or territory of the United States?<span class="required">*</span></div>
+	  				<div style="display:inline-block; padding-top: 10px; margin-left: 20px">
+                    
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.IsBarMember, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.IsBarMember, false, new {@checked = "checked" })                          
+	  				</div>
+	  				
+	  			</div>
+	  		</div>
+	  		<div class="row sub_question" id="jurisdiction_section" style="display: none">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<div class="question_number">11B.</div> If "Yes", list each jurisdiction in which admitted, the date of adminssion, and membership or registration number.
+	  				</div>
+	  				<table class="collection_table">
+	  					<tr>
+	  						<th style="width: 350px;">
+					  			Jurisdiction in which admitted<span class="required">*</span>			
+	  						</th>
+							<th>
+								Date of Admission<span class="required">*</span>
+							</th>
+							<th>
+								Membership No.<span class="required">*</span>
+							</th>
+	  						
+	  					</tr>
+                          @Html.EditorFor(model => Model.WebForm21aBarMembership)
+	  				</table>
+	  				
+	  			</div> 
+	  		</div>
+
+	  		<div class="row">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<span class="question_number">12A.</span> Are you currently admitted to practice before any state or federal agency or any federal court?<span class="required">*</span></div>
+                    <div style="display:inline-block; padding-top: 10px; margin-left: 20px">
+						<div class="radio_label">Yes</div>
+                        @Html.RadioButtonFor(model => model.IsPracticing, true)
+
+	  					<div class="radio_label">No</div>
+                        @Html.RadioButtonFor(model => model.IsPracticing, false, new {@checked = "checked" }) 
+	  				</div>
+	  			</div>
+	  		</div>
+	  		<div class="row sub_question" id="practice_section" style="display: none">
+	  			<div class="col-md-12">
+	  				<div class="question">
+	  					<div class="question_number">12B.</div> If "Yes", list each agency or federal court to which admitted, the date of admission, and membership or registration number.
+	  				</div>
+	  				<table class="collection_table">
+	  					<tr>
+	  						<th style="width: 350px;">
+					  			Agency in which admitted		
+	  						</th>
+							<th>
+								Date of admission
+							</th>
+							<th>
+								Membership No.
+							</th>
+	  						
+	  					</tr>
+
+                        @Html.EditorFor(model => Model.WebForm21aPracticeMembership)
+	  				</table>
+	  				
+	  			</div> 
+	  		</div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                        <button type="button" class="btn btn-default btn-lg" onclick="navigation_click(5)">Previous</button>
+
+                        <button type="button" class="btn btn-primary btn-lg" onclick="navigation_click(6)">Next</button>
+                </div>
+            </div>
+
+	  		
+
+	  	</div>

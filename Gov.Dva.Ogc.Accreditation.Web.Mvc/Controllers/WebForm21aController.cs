@@ -65,7 +65,7 @@ namespace Gov.Dva.Ogc.Accreditation.Web.Mvc.Controllers
             barMembershipList.Add(new WebForm21aBarMembership());
             newForm.WebForm21aBarMembership = barMembershipList;
 
-            /* barMembership */
+            /* practiceMembership */
             var practiceMembershipList = new List<WebForm21aPracticeMembership>();
             practiceMembershipList.Add(new WebForm21aPracticeMembership());
             practiceMembershipList.Add(new WebForm21aPracticeMembership());

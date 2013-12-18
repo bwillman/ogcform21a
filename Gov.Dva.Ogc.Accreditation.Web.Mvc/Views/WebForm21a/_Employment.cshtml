@@ -1,1 +1,67 @@
-﻿
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.WebForm21a
+
+	  	<div class="field_section" id="section_3" style="display:none">
+	  		<h3>Current Employment</h3>
+
+            <div class="row">
+                <div class="col-md-6">
+                        <label><span class="question_number">3A.</span> Employment Status</label><span class="required">*</span>
+                        <div id="employment_status">
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus0" value="0" />EMPLOYED   <span class="question_small_text">(complete item 3B)</span>
+                            </div>
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus1" value="1" />UNEMPLOYED   <span class="question_small_text">(skip item 3B)</span>
+                            </div>
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus2" value="2" />SELF-EMPLOYED   <span class="question_small_text">(skip item 3B)</span>
+                            </div>
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="EmploymentStatus" id="EmploymentStatus3" value="3" />STUDENT   <span class="question_small_text">(skip item 3B)</span>
+                            </div>
+
+                        </div>
+                </div>
+                <div class="col-md-6">
+
+                        <label><span class="question_number">3B.</span> Work Address</label> 
+					    <div class="form-group">
+                            @Html.TextBoxFor(model => model.WorkAddress1, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.WorkAddress1)
+					    </div>		
+					    <div class="form-group">
+
+                            @Html.TextBoxFor(model => model.WorkAddress2, new { @class = "form-control" })
+                            <span class="sublabel">Street Address</span>
+                            @Html.ValidationMessageFor(model => model.WorkAddress2)
+
+					    </div>		
+					    <div class="row">
+						    <div class="form-group col-md-6">
+                                @Html.TextBoxFor(model => model.WorkState, new { @class = "form-control" })
+                                <span class="sublabel">State</span>
+                                @Html.ValidationMessageFor(model => model.WorkState)
+						    </div>		
+						    <div class="form-group  col-md-6">
+                                @Html.TextBoxFor(model => model.WorkZip, new { @class = "form-control" })
+                                <span class="sublabel">Zip</span>
+                                @Html.ValidationMessageFor(model => model.WorkZip)
+						    </div>		
+						
+					    </div>
+
+                </div>
+            </div>
+
+            <h3>Employment History</h3>
+
+            @Html.EditorFor(model => model.WebForm21aEmployer)
+            <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                        <button type="button" class="btn btn-default btn-lg" onclick="navigation_click(3)">Previous</button>
+
+                        <button type="button" class="btn btn-primary btn-lg" onclick="navigation_click(4)">Next</button>
+                </div>
+            </div>
+
+	  	</div>
