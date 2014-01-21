@@ -16,7 +16,8 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
     {
         public System.Guid ID { get; set; }
         public System.Guid Form21aID { get; set; }
-        public System.DateTime ActiveServiceDate { get; set; }
+        public System.DateTime StartServiceDate { get; set; }
+        public System.DateTime EndServiceDate { get; set; }
     
         public virtual WebForm21a WebForm21a { get; set; }
     }

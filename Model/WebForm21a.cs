@@ -6,14 +6,12 @@
 //    Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System.ComponentModel.DataAnnotations;
 
 namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
 {
     using System;
     using System.Collections.Generic;
     
-    [MetadataType(typeof(WebForm21aAnnotations))]
     public partial class WebForm21a
     {
         public WebForm21a()

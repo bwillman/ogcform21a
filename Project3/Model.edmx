@@ -241,7 +241,10 @@
           </Key>
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="ActiveServiceDate" Type="date" Nullable="false" />
+          <!--
+          <Property Name="ActiveServiceDate" Type="date" Nullable="false" />-->
+          <Property Name="StartServiceDate" Type="date" Nullable="false" />
+          <Property Name="EndServiceDate" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="WebForm21DischargeType">
           <Key>
@@ -677,9 +680,9 @@
           <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
           <Property Name="PhoneNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
           <Property Name="Relationship" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Type="Guid" Name="WebForm21aForm21aID" Nullable="false" />
+          <!-- <Property Type="Guid" Name="WebForm21aForm21aID" Nullable="false" /> -->
           <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.WebForm21aWebForm21aReference" FromRole="WebForm21aReference" ToRole="WebForm21a" />
-          <Property Type="Guid" Name="WebForm21aForm21aID1" Nullable="false" />
+          <!-- <Property Type="Guid" Name="WebForm21aForm21aID1" Nullable="false" />-->
         </EntityType>
         <EntityType Name="WebForm21aServiceBranch">
           <Key>
@@ -702,7 +705,9 @@
           </Key>
           <Property Name="ID" Type="Guid" Nullable="false" />
           <Property Name="Form21aID" Type="Guid" Nullable="false" />
-          <Property Name="ActiveServiceDate" Type="DateTime" Nullable="false" Precision="0" />
+          <!-- <Property Name="ActiveServiceDate" Type="DateTime" Nullable="false" Precision="0" /> -->
+          <Property Name="StartServiceDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndServiceDate" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_tForm21aServiceDate_tForm21a" FromRole="WebForm21aServiceDate" ToRole="WebForm21a" />
         </EntityType>
         <EntityType Name="WebForm21DischargeType">
@@ -910,7 +915,9 @@
               <PropertyRef Name="Form21aID" />
             </Principal>
             <Dependent Role="WebForm21aReference">
-              <PropertyRef Name="WebForm21aForm21aID1" />
+              <!-- <PropertyRef Name="WebForm21aForm21aID" /> -->
+              <PropertyRef Name="Form21aID" />
+
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1076,6 +1083,8 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
                 <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+
+
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1099,7 +1108,9 @@
               <MappingFragment StoreEntitySet="WebForm21aServiceDate">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
-                <ScalarProperty Name="ActiveServiceDate" ColumnName="ActiveServiceDate" />
+                <!-- <ScalarProperty Name="ActiveServiceDate" ColumnName="ActiveServiceDate" /> -->
+                <ScalarProperty Name="StartServiceDate" ColumnName="StartServiceDate" />
+                <ScalarProperty Name="EndServiceDate" ColumnName="EndServiceDate" />                
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
