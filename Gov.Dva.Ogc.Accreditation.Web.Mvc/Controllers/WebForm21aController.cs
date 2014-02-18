@@ -44,8 +44,8 @@ namespace Gov.Dva.Ogc.Accreditation.Web.Mvc.Controllers
             WebForm21a newForm = new WebForm21a();
              /* serviceDates */
             var serviceDatesList = new List<WebForm21aServiceDate>();
-            serviceDatesList.Add(new WebForm21aServiceDate() {ActiveServiceDate = new DateTime(2001,12,1)});
-            serviceDatesList.Add(new WebForm21aServiceDate() { ActiveServiceDate = new DateTime(2005, 10, 1) });
+            serviceDatesList.Add(new WebForm21aServiceDate() {StartServiceDate = new DateTime(2001,12,1),EndServiceDate = new DateTime(2001,12,1)});
+
             newForm.WebForm21aServiceDate = serviceDatesList;
 
             /* employers */

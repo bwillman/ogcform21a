@@ -96,19 +96,10 @@
 
             <div>
 			    <div class="row">
-				    <div class="col-md-6 form-group">
+				    <div class="col-md-12 form-group">
 					    <label>List Dates of all active military service</label>
-                        <div class="row">
-                            <div class="col-md-6">
-                                @Html.EditorFor(model => model.WebForm21aServiceDate)
-                            </div>
-                        </div>
-                        
+                       
 
-									
-				    </div>	
-                    <div class="col-md-6 form-group">
-                        <label>Branch of Service</label>
                         @Html.EditorFor(model => model.WebForm21aServiceBranch)
                     
                         @Html.ValidationMessageFor(model => model.WebForm21aServiceBranch)

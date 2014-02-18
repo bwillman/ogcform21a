@@ -234,6 +234,8 @@
           <Property Name="IsNonVeteran" Type="bit" />
           <Property Name="IsOther" Type="bit" />
           <Property Name="OtherService" Type="nvarchar" MaxLength="35" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
         </EntityType>
         <EntityType Name="WebForm21aServiceDate">
           <Key>
@@ -241,10 +243,8 @@
           </Key>
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
-          <!--
-          <Property Name="ActiveServiceDate" Type="date" Nullable="false" />-->
-          <Property Name="StartServiceDate" Type="date" Nullable="false" />
-          <Property Name="EndServiceDate" Type="date" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="WebForm21DischargeType">
           <Key>
@@ -698,6 +698,8 @@
           <Property Name="IsOther" Type="Boolean" />
           <Property Name="OtherService" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_tForm21aBranch_tForm21a" FromRole="WebForm21aServiceBranch" ToRole="WebForm21a" />
+          <Property Type="DateTime" Name="StartDate" Precision="0" />
+          <Property Type="DateTime" Name="EndDate" Precision="0" />
         </EntityType>
         <EntityType Name="WebForm21aServiceDate">
           <Key>
@@ -709,6 +711,8 @@
           <Property Name="StartServiceDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="EndServiceDate" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_tForm21aServiceDate_tForm21a" FromRole="WebForm21aServiceDate" ToRole="WebForm21a" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="WebForm21DischargeType">
           <Key>
@@ -1091,6 +1095,8 @@
           <EntitySetMapping Name="WebForm21aServiceBranch">
             <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aServiceBranch">
               <MappingFragment StoreEntitySet="WebForm21aServiceBranch">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
                 <ScalarProperty Name="IsArmy" ColumnName="IsArmy" />
                 <ScalarProperty Name="IsNavy" ColumnName="IsNavy" />
@@ -1106,12 +1112,12 @@
           <EntitySetMapping Name="WebForm21aServiceDate">
             <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aServiceDate">
               <MappingFragment StoreEntitySet="WebForm21aServiceDate">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
                 <!-- <ScalarProperty Name="ActiveServiceDate" ColumnName="ActiveServiceDate" /> -->
-                <ScalarProperty Name="StartServiceDate" ColumnName="StartServiceDate" />
-                <ScalarProperty Name="EndServiceDate" ColumnName="EndServiceDate" />                
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="WebForm21DischargeType">
