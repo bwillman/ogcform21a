@@ -223,19 +223,14 @@
         </EntityType>
         <EntityType Name="WebForm21aServiceBranch">
           <Key>
-            <PropertyRef Name="Form21aID" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="IsArmy" Type="bit" />
-          <Property Name="IsNavy" Type="bit" />
-          <Property Name="IsAirForce" Type="bit" />
-          <Property Name="IsMarines" Type="bit" />
-          <Property Name="IsCoastGuard" Type="bit" />
           <Property Name="IsNonVeteran" Type="bit" />
-          <Property Name="IsOther" Type="bit" />
-          <Property Name="OtherService" Type="nvarchar" MaxLength="35" />
           <Property Name="StartDate" Type="date" />
           <Property Name="EndDate" Type="date" />
+          <Property Name="ServiceBranch" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="WebForm21aServiceDate">
           <Key>
@@ -296,7 +291,7 @@
         </EntityType>
         <Association Name="FK_tForm21aBranch_tForm21a">
           <End Role="WebForm21a" Type="DBSchemaModel.Store.WebForm21a" Multiplicity="1" />
-          <End Role="WebForm21aServiceBranch" Type="DBSchemaModel.Store.WebForm21aServiceBranch" Multiplicity="0..1" />
+          <End Role="WebForm21aServiceBranch" Type="DBSchemaModel.Store.WebForm21aServiceBranch" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="WebForm21a">
               <PropertyRef Name="Form21aID" />
@@ -453,7 +448,6 @@
           <EntitySet Name="WebForm21aPracticeMembership" EntityType="DBSchemaModel.WebForm21aPracticeMembership" />
           <EntitySet Name="WebForm21aReference" EntityType="DBSchemaModel.WebForm21aReference" />
           <EntitySet Name="WebForm21aServiceBranch" EntityType="DBSchemaModel.WebForm21aServiceBranch" />
-          <EntitySet Name="WebForm21aServiceDate" EntityType="DBSchemaModel.WebForm21aServiceDate" />
           <EntitySet Name="WebForm21DischargeType" EntityType="DBSchemaModel.WebForm21DischargeType" />
           <EntitySet Name="WebForm21OtherAccred" EntityType="DBSchemaModel.WebForm21OtherAccred" />
           <EntitySet Name="WebForm21Qualification" EntityType="DBSchemaModel.WebForm21Qualification" />
@@ -486,10 +480,6 @@
           <AssociationSet Name="FK_tForm21aDischarge_tForm21a" Association="DBSchemaModel.FK_tForm21aDischarge_tForm21a">
             <End Role="WebForm21a" EntitySet="WebForm21a" />
             <End Role="WebForm21aDischargeType" EntitySet="WebForm21aDischargeType" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tForm21aServiceDate_tForm21a" Association="DBSchemaModel.FK_tForm21aServiceDate_tForm21a">
-            <End Role="WebForm21a" EntitySet="WebForm21a" />
-            <End Role="WebForm21aServiceDate" EntitySet="WebForm21aServiceDate" />
           </AssociationSet>
           <AssociationSet Name="FK_WebForm21aBarMembership_WebForm21a" Association="DBSchemaModel.FK_WebForm21aBarMembership_WebForm21a">
             <End Role="WebForm21a" EntitySet="WebForm21a" />
@@ -604,7 +594,6 @@
           <Property Name="IsProcessed" Type="Boolean" />
           <NavigationProperty Name="WebForm21aServiceBranch" Relationship="DBSchemaModel.FK_tForm21aBranch_tForm21a" FromRole="WebForm21a" ToRole="WebForm21aServiceBranch" />
           <NavigationProperty Name="WebForm21aDischargeType" Relationship="DBSchemaModel.FK_tForm21aDischarge_tForm21a" FromRole="WebForm21a" ToRole="WebForm21aDischargeType" />
-          <NavigationProperty Name="WebForm21aServiceDate" Relationship="DBSchemaModel.FK_tForm21aServiceDate_tForm21a" FromRole="WebForm21a" ToRole="WebForm21aServiceDate" />
           <NavigationProperty Name="WebForm21aBarMembership" Relationship="DBSchemaModel.FK_WebForm21aBarMembership_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aBarMembership" />
           <NavigationProperty Name="WebForm21aEducation" Relationship="DBSchemaModel.FK_WebForm21aEducation_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aEducation" />
           <NavigationProperty Name="WebForm21aEmployer" Relationship="DBSchemaModel.FK_WebForm21aEmployer_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aEmployer" />
@@ -687,32 +676,15 @@
         <EntityType Name="WebForm21aServiceBranch">
           <Key>
             <PropertyRef Name="Form21aID" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="Form21aID" Type="Guid" Nullable="false" />
-          <Property Name="IsArmy" Type="Boolean" />
-          <Property Name="IsNavy" Type="Boolean" />
-          <Property Name="IsAirForce" Type="Boolean" />
-          <Property Name="IsMarines" Type="Boolean" />
-          <Property Name="IsCoastGuard" Type="Boolean" />
-          <Property Name="IsNonVeteran" Type="Boolean" />
-          <Property Name="IsOther" Type="Boolean" />
-          <Property Name="OtherService" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_tForm21aBranch_tForm21a" FromRole="WebForm21aServiceBranch" ToRole="WebForm21a" />
           <Property Type="DateTime" Name="StartDate" Precision="0" />
           <Property Type="DateTime" Name="EndDate" Precision="0" />
-        </EntityType>
-        <EntityType Name="WebForm21aServiceDate">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="Form21aID" Type="Guid" Nullable="false" />
-          <!-- <Property Name="ActiveServiceDate" Type="DateTime" Nullable="false" Precision="0" /> -->
-          <Property Name="StartServiceDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="EndServiceDate" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_tForm21aServiceDate_tForm21a" FromRole="WebForm21aServiceDate" ToRole="WebForm21a" />
-          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="0" />
+          <Property Type="String" Name="ServiceBranch" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsNonVeteran" Type="Boolean" />
+          <Property Type="Guid" Name="ID" Nullable="false" />
         </EntityType>
         <EntityType Name="WebForm21DischargeType">
           <Key>
@@ -829,7 +801,7 @@
         </Association>
         <Association Name="FK_tForm21aBranch_tForm21a">
           <End Role="WebForm21a" Type="DBSchemaModel.WebForm21a" Multiplicity="1" />
-          <End Role="WebForm21aServiceBranch" Type="DBSchemaModel.WebForm21aServiceBranch" Multiplicity="0..1" />
+          <End Role="WebForm21aServiceBranch" Type="DBSchemaModel.WebForm21aServiceBranch" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="WebForm21a">
               <PropertyRef Name="Form21aID" />
@@ -847,18 +819,6 @@
               <PropertyRef Name="Form21aID" />
             </Principal>
             <Dependent Role="WebForm21aDischargeType">
-              <PropertyRef Name="Form21aID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tForm21aServiceDate_tForm21a">
-          <End Role="WebForm21a" Type="DBSchemaModel.WebForm21a" Multiplicity="1" />
-          <End Role="WebForm21aServiceDate" Type="DBSchemaModel.WebForm21aServiceDate" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="WebForm21a">
-              <PropertyRef Name="Form21aID" />
-            </Principal>
-            <Dependent Role="WebForm21aServiceDate">
               <PropertyRef Name="Form21aID" />
             </Dependent>
           </ReferentialConstraint>
@@ -1095,29 +1055,13 @@
           <EntitySetMapping Name="WebForm21aServiceBranch">
             <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aServiceBranch">
               <MappingFragment StoreEntitySet="WebForm21aServiceBranch">
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
-                <ScalarProperty Name="IsArmy" ColumnName="IsArmy" />
-                <ScalarProperty Name="IsNavy" ColumnName="IsNavy" />
-                <ScalarProperty Name="IsAirForce" ColumnName="IsAirForce" />
-                <ScalarProperty Name="IsMarines" ColumnName="IsMarines" />
-                <ScalarProperty Name="IsCoastGuard" ColumnName="IsCoastGuard" />
-                <ScalarProperty Name="IsNonVeteran" ColumnName="IsNonVeteran" />
-                <ScalarProperty Name="IsOther" ColumnName="IsOther" />
-                <ScalarProperty Name="OtherService" ColumnName="OtherService" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="WebForm21aServiceDate">
-            <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aServiceDate">
-              <MappingFragment StoreEntitySet="WebForm21aServiceDate">
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
-                <!-- <ScalarProperty Name="ActiveServiceDate" ColumnName="ActiveServiceDate" /> -->
-                </MappingFragment>
+                <ScalarProperty Name="IsNonVeteran" ColumnName="IsNonVeteran" />
+                <ScalarProperty Name="ServiceBranch" ColumnName="ServiceBranch" />
+              </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="WebForm21DischargeType">

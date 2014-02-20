@@ -35,7 +35,6 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
         public DbSet<WebForm21aPracticeMembership> WebForm21aPracticeMembership { get; set; }
         public DbSet<WebForm21aReference> WebForm21aReference { get; set; }
         public DbSet<WebForm21aServiceBranch> WebForm21aServiceBranch { get; set; }
-        public DbSet<WebForm21aServiceDate> WebForm21aServiceDate { get; set; }
         public DbSet<WebForm21DischargeType> WebForm21DischargeType { get; set; }
         public DbSet<WebForm21OtherAccred> WebForm21OtherAccred { get; set; }
         public DbSet<WebForm21Qualification> WebForm21Qualification { get; set; }

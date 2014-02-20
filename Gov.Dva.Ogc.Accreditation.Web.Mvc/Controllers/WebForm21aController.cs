@@ -42,12 +42,48 @@ namespace Gov.Dva.Ogc.Accreditation.Web.Mvc.Controllers
         public ActionResult Create()
         {
             WebForm21a newForm = new WebForm21a();
-             /* serviceDates */
-            var serviceDatesList = new List<WebForm21aServiceDate>();
-            serviceDatesList.Add(new WebForm21aServiceDate() {StartServiceDate = new DateTime(2001,12,1),EndServiceDate = new DateTime(2001,12,1)});
+            /* serviceDates 
+           var serviceDatesList = new List<WebForm21aServiceDate>();
+           serviceDatesList.Add(new WebForm21aServiceDate() {StartServiceDate = new DateTime(2001,12,1),EndServiceDate = new DateTime(2001,12,1)});
+            
+           newForm.WebForm21aServiceDate = serviceDatesList; */
 
-            newForm.WebForm21aServiceDate = serviceDatesList;
+            var serviceBranchList = new List<WebForm21aServiceBranch>();
+            serviceBranchList.Add(new WebForm21aServiceBranch());
+            newForm.WebForm21aServiceBranch = serviceBranchList;
 
+            /* serviceBranchDropDown */
+            List<SelectListItem> serviceBranchItems = new List<SelectListItem>();
+            serviceBranchItems.Add(new SelectListItem
+            {
+                Text = "Army",
+                Value = "Army"
+            });
+            serviceBranchItems.Add(new SelectListItem
+            {
+                Text = "Navy",
+                Value = "Navy",
+                Selected = true
+            });
+            serviceBranchItems.Add(new SelectListItem
+            {
+                Text = "Air Force",
+                Value = "Air Force"
+            });
+
+            serviceBranchItems.Add(new SelectListItem
+            {
+                Text = "Marines",
+                Value = "Marines"
+            });
+            serviceBranchItems.Add(new SelectListItem
+            {
+                Text = "Coast Guard",
+                Value = "Coast Guard"
+            });
+
+            @ViewBag.serviceBranchItems = serviceBranchItems;
+            
             /* employers */
             var employerList = new List<WebForm21aEmployer>();
             employerList.Add(new WebForm21aEmployer());

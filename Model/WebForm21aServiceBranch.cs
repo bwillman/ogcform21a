@@ -15,16 +15,11 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
     public partial class WebForm21aServiceBranch
     {
         public System.Guid Form21aID { get; set; }
-        public Nullable<bool> IsArmy { get; set; }
-        public Nullable<bool> IsNavy { get; set; }
-        public Nullable<bool> IsAirForce { get; set; }
-        public Nullable<bool> IsMarines { get; set; }
-        public Nullable<bool> IsCoastGuard { get; set; }
-        public Nullable<bool> IsNonVeteran { get; set; }
-        public Nullable<bool> IsOther { get; set; }
-        public string OtherService { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
+        public string ServiceBranch { get; set; }
+        public Nullable<bool> IsNonVeteran { get; set; }
+        public System.Guid ID { get; set; }
     
         public virtual WebForm21a WebForm21a { get; set; }
     }

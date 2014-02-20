@@ -97,9 +97,6 @@
     <Compile Include="WebForm21aServiceBranch.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="WebForm21aServiceDate.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="WebForm21aServiceDateAnnotations.cs" />
     <Compile Include="WebForm21DischargeType.cs">
       <DependentUpon>Model.tt</DependentUpon>

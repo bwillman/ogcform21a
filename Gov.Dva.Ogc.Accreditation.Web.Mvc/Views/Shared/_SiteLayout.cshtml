@@ -24,11 +24,17 @@
     @RenderSection("scripts",false)
 
   	<script src="~/Content/bootstrap/bootstrap.js"></script>
+  	<script src="~/Scripts/WebForm21a/utility.js"></script>
 
 
       	<script type="text/javascript">
+            
+      	    $(document).ready(function () {
 
-
+      	        $("#addServiceBranch").on("click", addServiceBranch);
+      	        $(".removeServiceBranch").on("click", removeServiceBranch);
+      	    })
+            
       	    var navigation_click = function (step) {
       	        //step is 1 through 7
       	        console.log("begin step: " + step);

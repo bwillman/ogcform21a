@@ -11,13 +11,15 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+    [MetadataType(typeof(WebForm21aAnnotations))]
     public partial class WebForm21a
     {
         public WebForm21a()
         {
+            this.WebForm21aServiceBranch = new HashSet<WebForm21aServiceBranch>();
             this.WebForm21aDischargeType = new HashSet<WebForm21aDischargeType>();
-            this.WebForm21aServiceDate = new HashSet<WebForm21aServiceDate>();
             this.WebForm21aBarMembership = new HashSet<WebForm21aBarMembership>();
             this.WebForm21aEducation = new HashSet<WebForm21aEducation>();
             this.WebForm21aEmployer = new HashSet<WebForm21aEmployer>();
@@ -26,6 +28,7 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
         }
     
         public System.Guid Form21aID { get; set; }
+        [Required(ErrorMessage = "First Name is required")]
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -67,9 +70,8 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
         public Nullable<System.DateTime> DateEntered { get; set; }
         public Nullable<bool> IsProcessed { get; set; }
     
-        public virtual WebForm21aServiceBranch WebForm21aServiceBranch { get; set; }
+        public virtual ICollection<WebForm21aServiceBranch> WebForm21aServiceBranch { get; set; }
         public virtual ICollection<WebForm21aDischargeType> WebForm21aDischargeType { get; set; }
-        public virtual ICollection<WebForm21aServiceDate> WebForm21aServiceDate { get; set; }
         public virtual ICollection<WebForm21aBarMembership> WebForm21aBarMembership { get; set; }
         public virtual ICollection<WebForm21aEducation> WebForm21aEducation { get; set; }
         public virtual ICollection<WebForm21aEmployer> WebForm21aEmployer { get; set; }

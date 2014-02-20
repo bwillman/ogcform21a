@@ -12,10 +12,9 @@
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21aDischargeType" Width="2.25" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21aEducation" Width="2.375" PointX="3.25" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21aEmployer" Width="2.5" PointX="3.25" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBSchemaModel.WebForm21aPracticeMembership" Width="2.625" PointX="3.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSchemaModel.WebForm21aPracticeMembership" Width="2.625" PointX="4.125" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21aReference" Width="2.125" PointX="6.375" PointY="16.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21aServiceBranch" Width="2.5" PointX="3.375" PointY="17" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBSchemaModel.WebForm21aServiceDate" Width="2.875" PointX="3" PointY="20.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21DischargeType" Width="2.375" PointX="8" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21OtherAccred" Width="2.375" PointX="8" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="DBSchemaModel.WebForm21Qualification" Width="2.375" PointX="8" PointY="6.625" IsExpanded="true" />
@@ -28,7 +27,6 @@
         <AssociationConnector Association="DBSchemaModel.FK_tForm21ServiceDate_tForm21" ManuallyRouted="false" />
         <AssociationConnector Association="DBSchemaModel.FK_tForm21aBranch_tForm21a" ManuallyRouted="false" />
         <AssociationConnector Association="DBSchemaModel.FK_tForm21aDischarge_tForm21a" ManuallyRouted="false" />
-        <AssociationConnector Association="DBSchemaModel.FK_tForm21aServiceDate_tForm21a" ManuallyRouted="false" />
         <AssociationConnector Association="DBSchemaModel.FK_WebForm21aBarMembership_WebForm21a" ManuallyRouted="false" />
         <AssociationConnector Association="DBSchemaModel.FK_WebForm21aEducation_WebForm21a" ManuallyRouted="false" />
         <AssociationConnector Association="DBSchemaModel.FK_WebForm21aEmployer_WebForm21a" ManuallyRouted="false" />
