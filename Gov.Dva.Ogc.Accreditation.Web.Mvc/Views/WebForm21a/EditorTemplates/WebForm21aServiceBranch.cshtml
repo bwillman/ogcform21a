@@ -5,7 +5,7 @@
 }
     
 
-        <div class="row servBranchRow"> 
+        <div class="row serviceBranchRow"> 
 
                 <div class="col-md-3 form-group">
                     @Html.TextBoxFor(model => Model.StartDate, new { @class = "form-control"})
@@ -16,7 +16,7 @@
                     <span class="sublabel">End Date</span>
                 </div>
                 <div class="col-md-4 form-group">
-                    @Html.DropDownListFor(model => Model.ServiceBranch, (List<SelectListItem>)@ViewBag.serviceBranchItems, new { @class = "form-control serviceBranch" })
+                    @Html.DropDownListFor(model => Model.ServiceBranch, (List<SelectListItem>)@ViewBag.serviceBranchItems, new { @class = "form-control" })
                 </div>
                 <!--
                 <div class="col-md-2 form-group">

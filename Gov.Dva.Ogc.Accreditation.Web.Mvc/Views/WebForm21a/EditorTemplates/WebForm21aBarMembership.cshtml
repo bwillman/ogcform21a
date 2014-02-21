@@ -9,27 +9,34 @@
                     Int32 brackPos = controlName.IndexOf("[");
                     Int32 jCount = Convert.ToInt32(controlName.Substring(brackPos + 1, 1)) + 1;
                     }
-            <tr>
-                <td colspan="3" style="padding: 0px 0px 0px 10px">
-                    <div>Jurisdiction #@jCount.ToString()</div>
-                </td>
-            </tr>
-	  		<tr>
-	  			<td>
-                @Html.TextBoxFor(model => model.Jurisdiction, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Jurisdiction)
-	  			</td>
-	  			<td>
-                @Html.TextBoxFor(model => model.AdmissionDate, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.AdmissionDate)
+            
+            <div class="row jurisdictionRow">
+                <div class="col-md-12">
+                    <div class="row">
+                
+                            <div class="col-md-12">Jurisdiction #@jCount.ToString()</div>
+                
+                    </div>
+	  		        <div class="row">
+	  			        <div class="col-md-5">
+                        @Html.TextBoxFor(model => model.Jurisdiction, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Jurisdiction)
+	  			        </div>
+	  			
+	  			        <div class="col-md-4">
+                        @Html.TextBoxFor(model => model.AdmissionDate, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.AdmissionDate)
 
-	  			</td>
-	  			<td>
-                @Html.TextBoxFor(model => model.MembershipNo, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.MembershipNo)
+	  			        </div>
+	  			        <div class="col-md-3">
+                        @Html.TextBoxFor(model => model.MembershipNo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MembershipNo)
 
-	  			</td>
-	  		</tr>
+	  			        </div>
+	  		        </div>
+
+                </div>
+            </div>
    
     
     

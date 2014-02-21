@@ -51,22 +51,9 @@
 
     
 	  	<!-- Education -->
-	  	<div class="field_section" id="section_4" style="display: none">
-
-
-	  		<h3>Education</h3>
-        
-
-            @Html.EditorFor(model => model.WebForm21aEducation)
-            <div class="row">
-                <div class="col-md-12" style="text-align: center">
-                        <button type="button" class="btn btn-default btn-lg" onclick="navigation_click(4)">Previous</button>
-
-                        <button type="button" class="btn btn-primary btn-lg" onclick="navigation_click(5)">Next</button>
-                </div>
-            </div>
-              
-	  	</div>
+    
+        @Html.Partial("_Education", Model)
+    
 
     	  	
 	  	<!-- Legal -->

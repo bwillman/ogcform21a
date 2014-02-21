@@ -9,27 +9,36 @@
                     Int32 brackPos = controlName.IndexOf("[");
                     Int32 pCount = Convert.ToInt32(controlName.Substring(brackPos + 1, 1)) + 1;
                     }
-            <tr>
-                <td colspan="3" style="padding: 0px 0px 0px 10px">
-                    <div>Agency #@pCount.ToString()</div>
-                </td>
-            </tr>
-	  		<tr>
-	  			<td>
-                @Html.TextBoxFor(model => model.Agency, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Agency)
-	  			</td>
-	  			<td>
-                @Html.TextBoxFor(model => model.AdmissionDate, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.AdmissionDate)
 
-	  			</td>
-	  			<td>
-                @Html.TextBoxFor(model => model.MembershipNo, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.MembershipNo)
+            <div class="row agencyRow">
+                <div class="col-md-12">
+                    <div class="row">
+                
+                            <div class="col-md-12">Jurisdiction #@pCount.ToString()</div>
+                
+                    </div>
+	  		        <div class="row">
+	  			        <div class="col-md-5">
+                        @Html.TextBoxFor(model => model.Agency, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Agency)
+	  			        </div>
+	  			
+	  			        <div class="col-md-4">
+                        @Html.TextBoxFor(model => model.AdmissionDate, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.AdmissionDate)
 
-	  			</td>
-	  		</tr>
+	  			        </div>
+	  			        <div class="col-md-3">
+                        @Html.TextBoxFor(model => model.MembershipNo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MembershipNo)
+
+	  			        </div>
+	  		        </div>
+
+                </div>
+            </div>
+
+
    
     
     

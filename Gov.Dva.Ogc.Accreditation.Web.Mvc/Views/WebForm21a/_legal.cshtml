@@ -22,21 +22,30 @@
 	  				<div class="question">
 	  					<div class="question_number">11B.</div> If "Yes", list each jurisdiction in which admitted, the date of adminssion, and membership or registration number.
 	  				</div>
-	  				<table class="collection_table">
-	  					<tr>
-	  						<th style="width: 350px;">
-					  			Jurisdiction in which admitted<span class="required">*</span>			
-	  						</th>
-							<th>
-								Date of Admission<span class="required">*</span>
-							</th>
-							<th>
-								Membership No.<span class="required">*</span>
-							</th>
-	  						
-	  					</tr>
-                          @Html.EditorFor(model => Model.WebForm21aBarMembership)
-	  				</table>
+                    <div id="jurisdictionDiv">
+                        <div class="row" style="font-weight: bold; margin-top: 10px; margin-bottom: 10px">
+                            <div class="col-md-5">
+                                Jurisdiction in which admitted<span class="required">*</span>
+                            </div>
+                            <div class="col-md-4">
+                                Date of Admission<span class="required">*</span>
+                            </div>
+                            <div class="col-md-3">
+                                Membership No.<span class="required">*</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                              <a href="#" id="addJurisdiction" class="addChildLink">Add Jurisdiction</a>
+                            </div>
+
+                        </div>
+                        @Html.EditorFor(model => Model.WebForm21aBarMembership)
+
+                    </div>
+
+
+
 	  				
 	  			</div> 
 	  		</div>
@@ -59,22 +68,27 @@
 	  				<div class="question">
 	  					<div class="question_number">12B.</div> If "Yes", list each agency or federal court to which admitted, the date of admission, and membership or registration number.
 	  				</div>
-	  				<table class="collection_table">
-	  					<tr>
-	  						<th style="width: 350px;">
-					  			Agency in which admitted		
-	  						</th>
-							<th>
-								Date of admission
-							</th>
-							<th>
-								Membership No.
-							</th>
-	  						
-	  					</tr>
+                    <div id="agencyDiv">
+                        <div class="row" style="font-weight: bold; margin-top: 10px; margin-bottom: 10px">
+                            <div class="col-md-5">
+                                Agency/Court in which admitted<span class="required">*</span>
+                            </div>
+                            <div class="col-md-4">
+                                Date of Admission<span class="required">*</span>
+                            </div>
+                            <div class="col-md-3">
+                                Membership No.<span class="required">*</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                              <a href="#" id="addAgency" class="addChildLink">Add Agency/Court</a>
+                            </div>
 
+                        </div>
                         @Html.EditorFor(model => Model.WebForm21aPracticeMembership)
-	  				</table>
+
+                    </div>
 	  				
 	  			</div> 
 	  		</div>

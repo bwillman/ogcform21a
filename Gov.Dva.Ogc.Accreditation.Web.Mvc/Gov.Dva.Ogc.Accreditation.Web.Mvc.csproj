@@ -312,6 +312,7 @@
     <Content Include="Views\WebForm21a\_MyInfo.cshtml" />
     <Content Include="Views\WebForm21a\_Employment.cshtml" />
     <Content Include="Views\WebForm21a\_legal.cshtml" />
+    <Content Include="Views\WebForm21a\_Education.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

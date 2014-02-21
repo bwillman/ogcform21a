@@ -53,9 +53,18 @@
                 </div>
             </div>
 
-            <h3>Employment History</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Employment History</h3>
 
-            @Html.EditorFor(model => model.WebForm21aEmployer)
+                    <a href="#" id="addEmployer" class="addChildLink">Add Employer</a>
+                    <div id="employerDiv">
+                     @Html.EditorFor(model => model.WebForm21aEmployer)
+                    </div>
+                    
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-md-12" style="text-align: center">
                         <button type="button" class="btn btn-default btn-lg" onclick="navigation_click(3)">Previous</button>

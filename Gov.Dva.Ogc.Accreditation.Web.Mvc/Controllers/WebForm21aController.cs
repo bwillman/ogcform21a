@@ -87,25 +87,25 @@ namespace Gov.Dva.Ogc.Accreditation.Web.Mvc.Controllers
             /* employers */
             var employerList = new List<WebForm21aEmployer>();
             employerList.Add(new WebForm21aEmployer());
-            employerList.Add(new WebForm21aEmployer());
+            //employerList.Add(new WebForm21aEmployer());
             newForm.WebForm21aEmployer = employerList;
 
             /* education */
             var educationList = new List<WebForm21aEducation>();
             educationList.Add(new WebForm21aEducation());
-            educationList.Add(new WebForm21aEducation());
+            //educationList.Add(new WebForm21aEducation());
             newForm.WebForm21aEducation = educationList;
 
             /* barMembership */
             var barMembershipList = new List<WebForm21aBarMembership>();
             barMembershipList.Add(new WebForm21aBarMembership());
-            barMembershipList.Add(new WebForm21aBarMembership());
+            //barMembershipList.Add(new WebForm21aBarMembership());
             newForm.WebForm21aBarMembership = barMembershipList;
 
             /* practiceMembership */
             var practiceMembershipList = new List<WebForm21aPracticeMembership>();
             practiceMembershipList.Add(new WebForm21aPracticeMembership());
-            practiceMembershipList.Add(new WebForm21aPracticeMembership());
+            //practiceMembershipList.Add(new WebForm21aPracticeMembership());
             newForm.WebForm21aPracticeMembership = practiceMembershipList;
 
 

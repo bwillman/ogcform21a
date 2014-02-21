@@ -1,0 +1,29 @@
+﻿@model Gov.Dva.Ogc.Data.Accreditation.Web.Model.WebForm21a
+
+
+	  	<div class="field_section" id="section_4" style="display: none">
+              <div class="row">
+                  <div class="col-md-12">
+	  		        <h3>Education</h3>
+
+                    <a href="#" id="addEducation" class="addChildLink">Add Educational Institution</a>
+
+                  </div>
+
+              </div>
+              <div id="educationDiv">
+                @Html.EditorFor(model => model.WebForm21aEducation)
+              </div>
+
+
+            <div class="row">
+
+                    <div class="col-md-12" style="text-align: center">
+                            <button type="button" class="btn btn-default btn-lg" onclick="navigation_click(4)">Previous</button>
+
+                            <button type="button" class="btn btn-primary btn-lg" onclick="navigation_click(5)">Next</button>
+                    </div>
+             
+	  	    </div>
+        </div>
+

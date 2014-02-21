@@ -30,9 +30,25 @@
       	<script type="text/javascript">
             
       	    $(document).ready(function () {
+                //Service Branch add/remove events
+      	        //$("#addServiceBranch").on("click", addServiceBranch);
+      	        $("#addServiceBranch").on("click",["serviceBranch"], addChildEntity);
+      	        $(".removeServiceBranch").on("click", removeChildEntity);
+      	        //Employer add/remove events
+      	        $("#addEmployer").on("click", ["employer"],addChildEntity);
+      	        $(".removeEmployer").on("click", removeChildEntity);
+      	        //Education add/remove events
+      	        $("#addEducation").on("click", ["education"], addChildEntity);
+      	        $(".removeEmployer").on("click", removeChildEntity);
 
-      	        $("#addServiceBranch").on("click", addServiceBranch);
-      	        $(".removeServiceBranch").on("click", removeServiceBranch);
+      	        //Jurisdiction add/remove events
+      	        $("#addJurisdiction").on("click", ["jurisdiction"],addChildEntity);
+      	        $(".removeJurisdiction").on("click", removeChildEntity);
+      	        //Agency add/remove events
+      	        $("#addAgency").on("click", ["agency"],addChildEntity);
+      	        $(".removeAgency").on("click", removeChildEntity);
+
+
       	    })
             
       	    var navigation_click = function (step) {
