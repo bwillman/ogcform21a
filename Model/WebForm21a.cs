@@ -12,7 +12,7 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    
     [MetadataType(typeof(WebForm21aAnnotations))]
     public partial class WebForm21a
     {
@@ -28,7 +28,6 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
         }
     
         public System.Guid Form21aID { get; set; }
-        [Required(ErrorMessage = "First Name is required")]
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -69,6 +68,13 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
         public string ExplainLimitation { get; set; }
         public Nullable<System.DateTime> DateEntered { get; set; }
         public Nullable<bool> IsProcessed { get; set; }
+        public string ExplainExpelled { get; set; }
+        public string ExplainDisciplined { get; set; }
+        public string ExplainTerminated { get; set; }
+        public string ExplainBarred { get; set; }
+        public string ExplainApplied { get; set; }
+        public string ExplainAccredTerminated { get; set; }
+        public string ExplainRepresented { get; set; }
     
         public virtual ICollection<WebForm21aServiceBranch> WebForm21aServiceBranch { get; set; }
         public virtual ICollection<WebForm21aDischargeType> WebForm21aDischargeType { get; set; }

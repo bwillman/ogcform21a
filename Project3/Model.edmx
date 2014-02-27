@@ -144,12 +144,19 @@
           <Property Name="IsCharged" Type="bit" />
           <Property Name="ExplainCharges" Type="nvarchar" MaxLength="1000" />
           <Property Name="WasExpelled" Type="bit" />
+          <Property Name="ExplainExpelled" Type="nvarchar" MaxLength="1000" />
           <Property Name="WasDisciplined" Type="bit" />
+          <Property Name="ExplainDisciplined" Type="nvarchar" MaxLength="1000" />
           <Property Name="WasTerminated" Type="bit" />
+          <Property Name="ExplainTerminated" Type="nvarchar" MaxLength="1000" />
           <Property Name="HasRepresentedGovt" Type="bit" />
+          <Property Name="ExplainRepresented" Type="nvarchar" MaxLength="1000" />
           <Property Name="WasBarred" Type="bit" />
+          <Property Name="ExplainBarred" Type="nvarchar" MaxLength="1000" />
           <Property Name="HaveAppliedForAccred" Type="bit" />
+          <Property Name="ExplainApplied" Type="nvarchar" MaxLength="1000" />
           <Property Name="WasAccredTerminated" Type="bit" />
+          <Property Name="ExplainAccredTerminated" Type="nvarchar" MaxLength="1000" />
           <Property Name="IsImpaired" Type="bit" />
           <Property Name="ExplainImpairment" Type="nvarchar" MaxLength="1000" />
           <Property Name="IsPhysicallyLimited" Type="bit" />
@@ -183,8 +190,9 @@
           <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Institution" Type="nvarchar" MaxLength="150" />
           <Property Name="Address" Type="nvarchar" MaxLength="200" />
-          <Property Name="DatesAttended" Type="nvarchar" MaxLength="75" />
           <Property Name="DegreeRecived" Type="nvarchar" MaxLength="100" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
         </EntityType>
         <EntityType Name="WebForm21aEmployer">
           <Key>
@@ -193,7 +201,11 @@
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Form21aID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="150" />
-          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="200" />
+          <Property Name="City" Type="nvarchar" MaxLength="200" />
+          <Property Name="State" Type="nvarchar" MaxLength="2" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="10" />
           <Property Name="PhoneNo" Type="nvarchar" MaxLength="20" />
           <Property Name="PositionTitle" Type="nvarchar" MaxLength="100" />
           <Property Name="DateRangeEmpBegin" Type="date" />
@@ -599,6 +611,13 @@
           <NavigationProperty Name="WebForm21aEmployer" Relationship="DBSchemaModel.FK_WebForm21aEmployer_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aEmployer" />
           <NavigationProperty Name="WebForm21aPracticeMembership" Relationship="DBSchemaModel.FK_WebForm21aPracticeMembership_WebForm21a" FromRole="WebForm21a" ToRole="WebForm21aPracticeMembership" />
           <NavigationProperty Name="WebForm21aReference" Relationship="DBSchemaModel.WebForm21aWebForm21aReference" FromRole="WebForm21a" ToRole="WebForm21aReference" />
+          <Property Type="String" Name="ExplainExpelled" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExplainDisciplined" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExplainTerminated" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExplainBarred" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExplainApplied" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExplainAccredTerminated" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExplainRepresented" MaxLength="1000" FixedLength="false" Unicode="true" />
 
         </EntityType>
         <EntityType Name="WebForm21aBarMembership">
@@ -629,9 +648,10 @@
           <Property Name="Form21aID" Type="Guid" Nullable="false" />
           <Property Name="Institution" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-          <Property Name="DatesAttended" Type="String" MaxLength="75" Unicode="true" FixedLength="false" />
           <Property Name="DegreeRecived" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_WebForm21aEducation_WebForm21a" FromRole="WebForm21aEducation" ToRole="WebForm21a" />
+          <Property Type="DateTime" Name="StartDate" Precision="0" />
+          <Property Type="DateTime" Name="EndDate" Precision="0" />
         </EntityType>
         <EntityType Name="WebForm21aEmployer">
           <Key>
@@ -640,13 +660,17 @@
           <Property Name="ID" Type="Guid" Nullable="false" />
           <Property Name="Form21aID" Type="Guid" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
           <Property Name="PhoneNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
           <Property Name="PositionTitle" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
           <Property Name="DateRangeEmpBegin" Type="DateTime" Precision="0" />
           <Property Name="DateRangeEmpEnd" Type="DateTime" Precision="0" />
           <Property Name="Supervisor" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="WebForm21a" Relationship="DBSchemaModel.FK_WebForm21aEmployer_WebForm21a" FromRole="WebForm21aEmployer" ToRole="WebForm21a" />
+          <Property Type="String" Name="Address1" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address2" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Zip" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="WebForm21aPracticeMembership">
           <Key>
@@ -936,6 +960,13 @@
           <EntitySetMapping Name="WebForm21a">
             <EntityTypeMapping TypeName="DBSchemaModel.WebForm21a">
               <MappingFragment StoreEntitySet="WebForm21a">
+                <ScalarProperty Name="ExplainRepresented" ColumnName="ExplainRepresented" />
+                <ScalarProperty Name="ExplainAccredTerminated" ColumnName="ExplainAccredTerminated" />
+                <ScalarProperty Name="ExplainApplied" ColumnName="ExplainApplied" />
+                <ScalarProperty Name="ExplainBarred" ColumnName="ExplainBarred" />
+                <ScalarProperty Name="ExplainTerminated" ColumnName="ExplainTerminated" />
+                <ScalarProperty Name="ExplainDisciplined" ColumnName="ExplainDisciplined" />
+                <ScalarProperty Name="ExplainExpelled" ColumnName="ExplainExpelled" />
                 <ScalarProperty Name="HomeCity" ColumnName="HomeCity" />
                 <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -1003,11 +1034,12 @@
           <EntitySetMapping Name="WebForm21aEducation">
             <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aEducation">
               <MappingFragment StoreEntitySet="WebForm21aEducation">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
                 <ScalarProperty Name="Institution" ColumnName="Institution" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="DatesAttended" ColumnName="DatesAttended" />
                 <ScalarProperty Name="DegreeRecived" ColumnName="DegreeRecived" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1015,10 +1047,14 @@
           <EntitySetMapping Name="WebForm21aEmployer">
             <EntityTypeMapping TypeName="DBSchemaModel.WebForm21aEmployer">
               <MappingFragment StoreEntitySet="WebForm21aEmployer">
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Form21aID" ColumnName="Form21aID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
                 <ScalarProperty Name="PositionTitle" ColumnName="PositionTitle" />
                 <ScalarProperty Name="DateRangeEmpBegin" ColumnName="DateRangeEmpBegin" />

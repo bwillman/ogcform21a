@@ -18,8 +18,9 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
         public System.Guid Form21aID { get; set; }
         public string Institution { get; set; }
         public string Address { get; set; }
-        public string DatesAttended { get; set; }
         public string DegreeRecived { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
     
         public virtual WebForm21a WebForm21a { get; set; }
     }

@@ -4,73 +4,94 @@
     Layout = null;
 }
 
-	  	<div class="collection_box employerRow">
-	  		<div class="row">
+	  	<div class="row employerRow">
 
-	  			<div class="col-md-2">
-                    <span class="employer_title">Employer #x</span> 
-	  			</div>
-                <div class="col-md-10">
-                    <div class="divider"></div>	
-                </div>
-
-                <div>&nbsp;</div>
-
-	  		</div>
-            <div style="margin-left: 10px">
-	  		<div class="row">
-		  		<div class="col-md-6 form-group">
-		  			<label>Name of Employer</label><span class="required">*</span>
-	  				@Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Name)
-                    <span class="sublabel">Eg. Google, Walmart, Department of Veteran Affairs</span>
-                </div>
-                <div class="col-md-6 form-group">
-					<label>Employer Phone</label>		
-                    @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.PhoneNo)                
-                    <span class="sublabel">(area code)-xxx-xxx</span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6"> 
-                    <div class="form-group">
-					    <label>Name of Supervisor</label><span class="required">*</span>	  			
-                        @Html.TextBoxFor(model => model.Supervisor, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Supervisor)
+            <div class="col-md-12"><!-- one big column for entire employer row -->
+                <div class="row margin-top: 10px">
+	  			    <div class="col-md-2">
+                        <span class="employer_title">Employer #x</span> <p></p>
+	  			    </div>
+                    <div class="col-md-10">
+                        <div class="divider"></div>	
                     </div>
-                    <div class="form-group">
-					    <label>Position Title</label><span class="required">*</span>		
-                        @Html.TextBoxFor(model => model.PositionTitle, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.PositionTitle)
+                </div>
+
+
+
+	  		    <div class="row" style="padding-left: 10px">
+		  		    <div class="col-md-6 form-group">
+		  			    <label>Name of Employer</label><span class="required">*</span>
+	  				    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Name)
+                        <span class="sublabel">Eg. Google, Walmart, Department of Veteran Affairs</span>
                     </div>
-					<label>Dates of Employment</label><br><span class="required">*</span>
-					<div style="width: 50px; display: inline-block">From: </div>
+                    <div class="col-md-6 form-group">
+					    <label>Employer Phone</label>		
+                        @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.PhoneNo)                
+                        <span class="sublabel">(area code)-xxx-xxx</span>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-left: 10px">
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+					        <label>Name of Supervisor</label><span class="required">*</span>	  			
+                            @Html.TextBoxFor(model => model.Supervisor, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Supervisor)
+                        </div>
+                        <div class="form-group">
+					        <label>Position Title</label><span class="required">*</span>		
+                            @Html.TextBoxFor(model => model.PositionTitle, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PositionTitle)
+                        </div>
+					    <label>Dates of Employment</label><br><span class="required">*</span>
+					    <div style="width: 50px; display: inline-block">From: </div>
 					
-                    @Html.TextBoxFor(model => model.DateRangeEmpBegin, new { @class = "form-control", @style = "display: inline-block; width: 100px" })
-                    @Html.ValidationMessageFor(model => model.DateRangeEmpBegin)
-					<div style="width: 50px; display: inline-block">To: </div> 		  			
-                    @Html.TextBoxFor(model => model.DateRangeEmpEnd, new { @class = "form-control", @style = "display: inline-block; width: 100px"  })
-                    @Html.ValidationMessageFor(model => model.DateRangeEmpEnd)	
-		  		</div>
-		  		<div class="col-md-6">	
+                        @Html.TextBoxFor(model => model.DateRangeEmpBegin, new { @class = "form-control", @style = "display: inline-block; width: 100px" })
+                        @Html.ValidationMessageFor(model => model.DateRangeEmpBegin)
+					    <div style="width: 50px; display: inline-block">To: </div> 		  			
+                        @Html.TextBoxFor(model => model.DateRangeEmpEnd, new { @class = "form-control", @style = "display: inline-block; width: 100px"  })
+                        @Html.ValidationMessageFor(model => model.DateRangeEmpEnd)	
+		  		    </div>
 
+                    <div class="col-md-6">
 
-		  			<label>Employer Address</label><span class="required">*</span>
-	  				@Html.TextAreaFor(model => model.Address, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Address)
-                    <span class="sublabel">Streed Address, City, State, Zip</span>
+                        <label>Employer Address</label><span class="required">*</span>	
+                        <div class="row">
+                            <div class="col-md-12 form-group">@Html.TextBoxFor( model => model.Address1, new { @class = "form-control" })</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">@Html.TextBoxFor( model => model.Address2, new { @class = "form-control" })</div>
+                        </div>
 
+              
+                        <div class="row">
 
-		  		</div>		 
+                            <div class="col-md-6">
+                                <div>@Html.TextBoxFor( model => model.City, new { @class = "form-control" })</div>
+                                <div class="sublabel">City</div>
+                            </div>
+                            <div class="col-md-2">
+                                <div>@Html.TextBoxFor( model => model.State, new { @class = "form-control" })</div>
+                                <div class="sublabel">State</div>
+                            </div>
+                            <div class="col-md-4">
+                                <div>@Html.TextBoxFor( model => model.Zip, new { @class = "form-control" })</div>
+                                <div class="sublabel">Zip</div>
+                            </div>
+
+                        </div>
+
+		  		    </div>		 
   			
 			
-	  		</div>
+	  		    </div>
 
             </div>
 	  			
+        </div><!-- end EmployerRow -->
 
-	  	</div>
 
     
   

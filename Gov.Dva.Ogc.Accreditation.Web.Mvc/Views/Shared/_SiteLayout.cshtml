@@ -24,96 +24,12 @@
     @RenderSection("scripts",false)
 
   	<script src="~/Content/bootstrap/bootstrap.js"></script>
+
   	<script src="~/Scripts/WebForm21a/utility.js"></script>
 
 
-      	<script type="text/javascript">
+    <script src="~/Scripts/Webform21a/create.js" type="text/javascript">
             
-      	    $(document).ready(function () {
-                //Service Branch add/remove events
-      	        //$("#addServiceBranch").on("click", addServiceBranch);
-      	        $("#addServiceBranch").on("click",["serviceBranch"], addChildEntity);
-      	        $(".removeServiceBranch").on("click", removeChildEntity);
-      	        //Employer add/remove events
-      	        $("#addEmployer").on("click", ["employer"],addChildEntity);
-      	        $(".removeEmployer").on("click", removeChildEntity);
-      	        //Education add/remove events
-      	        $("#addEducation").on("click", ["education"], addChildEntity);
-      	        $(".removeEmployer").on("click", removeChildEntity);
-
-      	        //Jurisdiction add/remove events
-      	        $("#addJurisdiction").on("click", ["jurisdiction"],addChildEntity);
-      	        $(".removeJurisdiction").on("click", removeChildEntity);
-      	        //Agency add/remove events
-      	        $("#addAgency").on("click", ["agency"],addChildEntity);
-      	        $(".removeAgency").on("click", removeChildEntity);
-
-
-      	    })
-            
-      	    var navigation_click = function (step) {
-      	        //step is 1 through 7
-      	        console.log("begin step: " + step);
-      	        $(".circle").css("background-color", "");
-      	        $(".field_section").css("display", "none");
-      	        $("#section_" + step).fadeIn();
-      	        window.scrollTo(0, 0);
-
-      	        for (var i = 1; i < step; i++) {
-      	            $(".step_" + i).removeClass("previous next current").addClass("previous");
-      	        }
-      	        for (var i = (step + 1); i <= 7; i++) {
-      	            $(".step_" + i).removeClass("previous next current").addClass("next");
-      	        }
-      	        $(".step_" + step).removeClass("previous next");
-      	        $(".step_" + step).addClass("current");
-      	        console.log("end step: " + step);
-
-                
-
-      	    }
-
-      	    $(document).ready(function () {
-      	        navigation_click("1");
-      	        //$('div').css("border", "1px solid #000000");
-                //bar membership
-      	        $("input[id='IsBarMember']").click(function () {
-      	            if (this.value == "True") { $("#jurisdiction_section").slideDown(); }
-      	            else { $("#jurisdiction_section").slideUp(); }
-
-      	        })
-                //is practicing
-      	        $("input[id='IsPracticing']").click(function () {
-      	            if (this.value == "True") { $("#practice_section").slideDown(); }
-      	            else { $("#practice_section").slideUp(); }
-      	        })
-      	        //was convicted
-      	        $("input[id='WasConvicted']").click(function () {
-      	            if (this.value == "True") { $("#was_convicted_section").slideDown(); }
-      	            else { $("#was_convicted_section").slideUp(); }
-      	        })
-      	        //was convicted military
-      	        $("input[id='WasConvictedMilitary']").click(function () {
-      	            if (this.value == "True") { $("#was_convicted_military_explanation").slideDown(); }
-      	            else { $("#was_convicted_military_explanation").slideUp(); }
-      	        })
-      	        //Is charged
-      	        $("input[id='IsCharged']").click(function () {
-      	            if (this.value == "True") { $("#is_charged_explanation").slideDown(); }
-      	            else { $("#is_charged_explanation").slideUp(); }
-      	        })
-      	        //Is Impaired
-      	        $("input[id='IsImpaired']").click(function () {
-      	            if (this.value == "True") { $("#is_impaired_explanation").slideDown(); }
-      	            else { $("#is_impaired_explanation").slideUp(); }
-      	        })
-      	        //Is physically limited
-      	        $("input[id='IsPhysicallyLimited']").click(function () {
-      	            if (this.value == "True") { $("#is_physically_limited_explanation").slideDown(); }
-      	            else { $("#is_physically_limited_explanation").slideUp(); }
-      	        })
-
-      	    })
 
   	</script>
 </body>

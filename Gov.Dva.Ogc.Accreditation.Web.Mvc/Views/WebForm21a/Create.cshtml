@@ -16,7 +16,8 @@
     @Html.Partial("_chevronMenu")
 </div>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -43,7 +44,7 @@
     
 	  	*@
     
-        @Html.Partial("_MyInfo", Model )     
+        @Html.Partial("_MyInfo", Model)     
     
 	  	<!-- Employment -->
     
@@ -61,235 +62,8 @@
         @Html.Partial("_legal", Model)
 	  	
 		<!-- Background -->
-		<div class="field_section" id="section_6"  style="display: none">
-			<h3>Background</h3>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="instructions">
-						<p>Truthfulness and candor are essential elements of a good moral character and reputation relevant to practice before the Department of Veteran Affairs. It is in your best interest, therefore, to provide the Office of the General Counsel with all available information in responding to the questions asked below. <span style="font-style: italic">For each question answered "YES", provide a detailed statement setting forth all relevant facts and dates with copies of relevant documentation.</span></p>
-						
-						<p>Your responses must be updated as necessary prior to your accreditation. Failure to disclose the requested information may result in denial of accreditation under 38 C.F.R. 14.629 or in disciplinary proceedings under 38 C.F.R. 14.633 if you are already accredited.</p>
-						<p>For questions 13 through 15 your answers should include convictions resulting from a plea of nolo contendere <span style="font-style: italic">(no contest)</span>, but omit (1) traffic fines of $300 or less, (2) any violation of law comitted before your 16th birthday, and (3) any conviction for which the record was expunged under Federal or state law.</p>
-					</div>
-				</div>
-			</div>
-            <!-- Was Convicted --> 
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">13A.</span> Have you ever been convicted, imprisoned, sentenced to probation or parole? <span class="question_small_text">(Include felonies, firearms or explosives violations, misdemeanors, and all other ofenses)</span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.WasConvicted, true)
 
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.WasConvicted, false) 
-	  				
-	  			</div>
-	  		</div>
-	  		<div class="row sub_question" id="was_convicted_section" style="display: none">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<div class="question_number">13B.</div> If "Yes", provide the date, explanation of the violation, place of occurence, and the name and address of the military authority or court involved.
-	  				</div>
-                    <div>
-                        @Html.TextAreaFor(model => model.ExplainConviction, new { @class = "form-control"})
-                    </div>	  				
-	  			</div> 
-	  		</div>
-            <!-- Was Convicted Military  -->
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">14A.</span>Have you ever been convicted by a military court-martial<span class="question_small_text">(If no military service, answer "No")</span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.WasConvictedMilitary, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.WasConvictedMilitary, false) 
-	  				
-	  			</div>
-	  		</div>
-	  		<div class="row sub_question" id="was_convicted_military_explanation" style="display: none">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<div class="question_number">14B.</div> If "Yes", provide the date, explanation of the violation, place of occurence, and the name and address of the military authority or court involved.
-	  				</div>
-                    <div>
-                        @Html.TextAreaFor(model => model.ExplainMilitaryConviction, new { @class = "form-control"})
-                    </div>	  				
-	  			</div> 
-	  		</div>
-            <!-- Is Charged -->
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">15A.</span>Are you now under charges for any violation of the law?<span class="question_small_text"></span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.IsCharged, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.IsCharged, false) 
-	  				
-	  			</div>
-	  		</div>
-	  		<div class="row sub_question" id="is_charged_explanation" style="display: none">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<div class="question_number">15B.</div> If "Yes", provide the date, explanation of the violation, place of occurence, and the name and address of the military authority or court involved.
-	  				</div>
-                    <div>
-                        @Html.TextAreaFor(model => model.ExplainCharges, new { @class = "form-control"})
-                    </div>	  				
-	  			</div> 
-	  		</div>
-            <!-- Was Expelled -->
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">16.</span>Have you ever been suspended, expelled or asked to resign or withdraw from any educational institution, or have you resigned or withdrawn from any such institution to avoid discipline, suspension, or expulsion for conduct involving dishonesty, fraud, misrepresentation, or deceit?<span class="question_small_text"></span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.WasExpelled, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.WasExpelled, false) 
-	  				
-	  			</div>
-	  		</div>
-            <!-- Was Disciplined -->
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">17.</span>Have you ever been disciplined, reprimanded, suspended or terminated in any job for conduct involving dishonesty, fraud, misrepresentation, deceit, or any violation of federal or state laws or regulations?<span class="question_small_text"></span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.WasDisciplined, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.WasDisciplined, false) 
-	  				
-	  			</div>
-	  		</div>
-            <!-- Was Terminated -->
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">18.</span>Have you ever resigned, retired from, or quit a job when you were under investigation or inquiry for conduct which could have been considered as involving dishonesty, fraud, misrepresentation, deceit, or violation of federal or state laws or regulations, or after receiving notice or being advised of possible investigation, inquiry, or disciplinary action for such conduct?<span class="question_small_text"></span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.WasTerminated, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.WasTerminated, false) 
-	  				
-	  			</div>
-	  		</div>
-            <!-- HasRepresentedGovt -->
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">19.</span>Have you ever functioned as a representative, agent, or attorney before a state or federal department or agency?<span class="question_small_text"></span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.HasRepresentedGovt, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.HasRepresentedGovt, false) 
-	  				
-	  			</div>
-	  		</div>
-            <!-- WasBarred -->
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">20.</span>Have you ever been reprimanded, suspended, or barred from practice before any court, bar, or federal or state agency, or have you resigned membership in the bar of any court, or federal or state agency to avoid reprimand, suspension, or disbarment for conduct involving dishonesty, fraud, misrepresentation, or deceit?<span class="question_small_text"></span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.WasBarred, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.WasBarred, false) 
-	  				
-	  			</div>
-	  		</div>
-            <!-- HasAppliedForAccred -->
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">21.</span>Have you ever applied for accreditation by the Department of Veteran Affairs as a  representative of a veterans service organization, agent, or attorney?<span class="question_small_text"></span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.HaveAppliedForAccred, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.HaveAppliedForAccred, false) 
-	  				
-	  			</div>
-	  		</div>
-            <!-- WasAccredTerminated -->
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">22.</span>If you were previously accredited as a representative of a Veteran Service Organization, was that accreditation terminated or suspended at the request of the organization?<span class="question_small_text"></span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.WasAccredTerminated, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.WasAccredTerminated, false) 
-	  				
-	  			</div>
-	  		</div>
-            <!-- IsImpaired -->
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">23A.</span>Do you have any condition or impairment (such as substance abuse, alcohol abuse, or a mental, emotional, nervous, or behavioral disorder or condition) that in any way currently affects, or if untreated or not otherwise actively managed, could affect your ability to represent claimants in a competent and professional manner?<span class="question_small_text"></span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.IsImpaired, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.IsImpaired, false) 
-	  				
-	  			</div>
-	  		</div>
-	  		<div class="row sub_question" id="is_impaired_explanation" style="display: none">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<div class="question_number">23B.</div>If you answered "Yes" to item 23A, please describe the condition or impairment, and any treatment you received in the past year or receive now. If you have been under the care or supervision of a healthcare professional, submit a statement by the healthcare professional specifying your current diagnosis, treatment regimen, and prognosis, and its bearing on your fitness to represent claimants before the Department of Veteran Affairs.
-	  				</div>
-                    <div>
-                        @Html.TextAreaFor(model => model.ExplainImpairment, new { @class = "form-control"})
-                    </div>	  				
-	  			</div> 
-	  		</div>
-
-            <!-- IsPhysicallyLimited-->
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<span class="question_number">24A.</span>Do you have any physical limitations which would interfere with your completion of a written examination administered under the supervision of a VA regional counsel?<span class="question_small_text">(Claims agent applicants only)</span></div>
-						<div class="radio_label">Yes</div>
-                        @Html.RadioButtonFor(model => model.IsPhysicallyLimited, true)
-
-	  					<div class="radio_label">No</div>
-                        @Html.RadioButtonFor(model => model.IsPhysicallyLimited, false) 
-	  				
-	  			</div>
-	  		</div>
-	  		<div class="row sub_question" id="is_physically_limited_explanation" style="display: none">
-	  			<div class="col-md-12">
-	  				<div class="question">
-	  					<div class="question_number">24B.</div>If "Yes", please state the nature of such limitations and provide details of any special accomodations deemed necessary.
-	  				</div>
-                    <div>
-                        @Html.TextAreaFor(model => model.ExplainLimitation, new { @class = "form-control"})
-                    </div>	  				
-	  			</div> 
-	  		</div>
-            <div class="row">
-                <div class="col-md-12" style="text-align: center">
-                        <button type="button" class="btn btn-default btn-lg" onclick="navigation_click(6)">Previous</button>
-
-                        <button type="button" class="btn btn-primary btn-lg" onclick="navigation_click(7)">Next</button>
-                </div>
-            </div>
-
-		</div><!-- end of background section -->
-
+        @Html.Partial("_Background", Model)
 
         <div class="field_section" id="section_7"  style="display: none">
         <!-- References -->
@@ -298,7 +72,8 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <input type="submit" class="btn btn-success" value="Submit Form" />
+                    <input type="submit"  value="Submit Form" id="submitBtn" class="btn btn-success"/>
+                    <!-- class="btn btn-success" -->
                 </div>
             </div>
 

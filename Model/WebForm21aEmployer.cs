@@ -17,12 +17,16 @@ namespace Gov.Dva.Ogc.Data.Accreditation.Web.Model
         public System.Guid ID { get; set; }
         public System.Guid Form21aID { get; set; }
         public string Name { get; set; }
-        public string Address { get; set; }
         public string PhoneNo { get; set; }
         public string PositionTitle { get; set; }
         public Nullable<System.DateTime> DateRangeEmpBegin { get; set; }
         public Nullable<System.DateTime> DateRangeEmpEnd { get; set; }
         public string Supervisor { get; set; }
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
     
         public virtual WebForm21a WebForm21a { get; set; }
     }
